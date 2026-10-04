@@ -17,7 +17,7 @@ export default function MediaPage() {
       </section>
 
       {/* YouTube Channel Spotlight Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="bg-gradient-to-r from-blue-900 to-slate-900 rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="space-y-4 max-w-xl">
             <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -43,7 +43,7 @@ export default function MediaPage() {
             <p className="text-xs text-blue-200 uppercase tracking-wider font-medium">Community Followers</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Video Embeds Section */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
