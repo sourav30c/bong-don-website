@@ -2,35 +2,7 @@ import Link from 'next/link';
 
 export default function ClinicsPage() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      
-      {/* Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <Link href="/" className="font-bold text-xl tracking-tight text-slate-800">
-            Dr. Sourav Sarkar
-          </Link>
-          <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-            <Link href="/" className="hover:text-blue-600 transition">Home</Link>
-            <Link href="/about" className="hover:text-blue-600 transition">About</Link>
-            <Link href="/services" className="hover:text-blue-600 transition">Services</Link>
-            <Link href="/clinics" className="text-blue-600 font-semibold">Clinics</Link>
-            <Link href="/media" className="hover:text-blue-600 transition">Media & Vlogs</Link>
-            <Link href="/testimonials" className="hover:text-blue-600 transition">Testimonials</Link>
-            <Link href="/contacts" className="hover:text-blue-600 transition">Contacts</Link>
-
-          </nav>
-          <div>
-            <Link 
-              href="/contact" 
-              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm transition"
-            >
-              Book Appointment
-            </Link>
-          </div>
-        </div>
-      </header>
-
+    <div>
       {/* Header Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         <span className="inline-block bg-blue-50 text-blue-700 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-blue-200">
@@ -54,12 +26,32 @@ export default function ClinicsPage() {
               <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                 Hospital Attachment
               </span>
-              <h3 className="text-xl font-bold text-slate-900">Galaxy Hospital</h3>
-              <p className="text-slate-500 text-sm">Barrackpur, Kolkata</p>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900">Galaxy Hospital</h3>
+                <p className="text-slate-500 text-sm">Barrackpur, Kolkata</p>
+              </div>
               
               <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                 <p><strong className="text-slate-900">Days:</strong> Monday, Wednesday, Friday</p>
                 <p><strong className="text-slate-900">Timings:</strong> 7:00 PM – 10:00 PM</p>
+              </div>
+
+              {/* Embedded Map Preview */}
+              <div className="h-44 w-full rounded-2xl overflow-hidden border border-slate-200 relative">
+                <iframe
+                  title="Galaxy Hospital Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.123456789!2d88.375!3d22.755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59b2522564e90137!2sGalaxy+Multispeciality+Hospital!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                ></iframe>
+                <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md shadow border border-slate-200 text-xs font-semibold text-blue-600">
+                  <a href="https://www.google.com/maps/place/Galaxy+Multispeciality+Hospital/data=!4m2!3m1!1s0x0:0x59b2522564e90137?sa=X&ved=1t:2428&ictx=111" target="_blank" rel="noopener noreferrer">
+                    Maps ↗
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -77,12 +69,32 @@ export default function ClinicsPage() {
               <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                 Specialist Center
               </span>
-              <h3 className="text-xl font-bold text-slate-900">Kidney Suraksha Specialist & Diagnostic Center</h3>
-              <p className="text-slate-500 text-sm">Barasat, Kolkata</p>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900">Kidney Suraksha Specialist & Diagnostic Center</h3>
+                <p className="text-slate-500 text-sm">Barasat, Kolkata</p>
+              </div>
               
               <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                 <p><strong className="text-slate-900">Days:</strong> Tuesday & Thursday</p>
                 <p><strong className="text-slate-900">Timings:</strong> Evening Hours</p>
+              </div>
+
+              {/* Embedded Map Preview */}
+              <div className="h-44 w-full rounded-2xl overflow-hidden border border-slate-200 relative">
+                <iframe
+                  title="Kidney Suraksha Center Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.123456789!2d88.48!3d22.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a3c1d3677779%3A0x46075fb441b5d510!2sBarasat!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                ></iframe>
+                <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md shadow border border-slate-200 text-xs font-semibold text-blue-600">
+                  <a href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwioop7X2J-XAxUAAAAAHQAAAAAQBQ..i&udm&fvr=1&pvq=Cg0vZy8xMXZqa3hrcGNoIgwKBmtpZG5leRACGAM&lqi=Cg5raWRuZXkgYmFyYXNhdEjvqqOewrqAgAhaFhAAGAAYASIOa2lkbmV5IGJhcmFzYXSSARFkaWFnbm9zdGljX2NlbnRlcg&cs=1&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x39f8a3c1d3677779:0x46075fb441b5d510" target="_blank" rel="noopener noreferrer">
+                    Maps ↗
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -100,12 +112,32 @@ export default function ClinicsPage() {
               <span className="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                 Clinic Chamber
               </span>
-              <h3 className="text-xl font-bold text-slate-900">Sustho Clinic</h3>
-              <p className="text-slate-500 text-sm">Phoolbagan, Kolkata</p>
+              <div>
+                <h3 className="text-xl font-bold text-slate-900">Sustho Clinic</h3>
+                <p className="text-slate-500 text-sm">Phoolbagan, Kolkata</p>
+              </div>
               
               <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                 <p><strong className="text-slate-900">Wednesday:</strong> 9:00 AM – 11:00 AM</p>
                 <p><strong className="text-slate-900">Saturday:</strong> 7:00 PM – 10:00 PM</p>
+              </div>
+
+              {/* Embedded Map Preview */}
+              <div className="h-44 w-full rounded-2xl overflow-hidden border border-slate-200 relative">
+                <iframe
+                  title="Dr Sourav Sarkar Phoolbagan Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.123456789!2d88.395016!3d22.5744809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02770036508a03%3A0xe02b469cf10f5cfd!2sDr%20Sourav%20Sarkar!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                ></iframe>
+                <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md shadow border border-slate-200 text-xs font-semibold text-blue-600">
+                  <a href="https://www.google.com/maps/place/Dr+Sourav+Sarkar/@22.5714574,88.3948248,21z/data=!4m6!3m5!1s0x3a02770036508a03:0xe02b469cf10f5cfd!8m2!3d22.5744809!4d88.395016!16s%2Fg%2F11lc_zbr61?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+                    Maps ↗
+                  </a>
+                </div>
               </div>
             </div>
 

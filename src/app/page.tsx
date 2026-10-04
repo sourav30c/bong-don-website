@@ -4,33 +4,7 @@ import Link from 'next/link';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      
-      {/* Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="font-bold text-xl tracking-tight text-slate-800">
-            Dr. Sourav Sarkar
-          </div>
-          <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-            <Link href="/" className="text-blue-600 font-semibold">Home</Link>
-            <Link href="/about" className="hover:text-blue-600 transition">About</Link>
-            <Link href="/services" className="hover:text-blue-600 transition">Services</Link>
-            <Link href="/clinics" className="hover:text-blue-600 transition">Clinics</Link>
-            <Link href="/media" className="hover:text-blue-600 transition">Media & Vlogs</Link>
-            <Link href="/testimonials" className="hover:text-blue-600 transition">Testimonials</Link>
-          </nav>
-          <div>
-            <Link 
-              href="/contact" 
-              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg shadow-sm transition"
-            >
-              Book Appointment
-            </Link>
-          </div>
-        </div>
-      </header>
-
+    <div>
       {/* Hero Section */}
       <section className="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -71,7 +45,7 @@ export default function LandingPage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Link 
-                href="/contact" 
+                href="/contacts" 
                 className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3.5 rounded-xl shadow-md text-center transition flex items-center justify-center gap-2"
               >
                 Book Consultation
