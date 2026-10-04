@@ -2,21 +2,21 @@ import Link from 'next/link';
 
 export default function ServicesPage() {
   return (
-    <div>
+    <div className="bg-slate-50 min-h-screen">
       {/* Header Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         <span className="inline-block bg-blue-50 text-blue-700 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-blue-200">
           Clinical Expertise & Treatments
         </span>
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
-          Services We Provide
+          Explore Our Medical Services
         </h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Comprehensive diagnostic, interventional, and long-term management plans for kidney health, renal replacement therapy, and general internal medicine.
         </p>
       </section>
 
-      {/* Category 1: Nephrology & Dialysis Care */}
+      {/* Category 1: Nephrology & Renal Treatments */}
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-slate-900 border-l-4 border-blue-600 pl-3">
@@ -26,114 +26,249 @@ export default function ServicesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          {/* Card 1: CKD */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" 
-                alt="Chronic Kidney Disease" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
-            </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Chronic Kidney Disease (CKD)</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Early detection, progression slowing, dietary guidance, and comprehensive metabolic monitoring for chronic renal failure patients.
-              </p>
-            </div>
-          </div>
 
-          {/* Card 2: Dialysis */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" 
-                alt="Dialysis Oversight" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+          {/* 1. Kidney Transplant */}
+          <Link href="/services/kidney-transplant" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
+                  alt="Kidney Transplant"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Kidney Transplant</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Comprehensive pre-transplant evaluation, surgical expertise coordination, and meticulous post-transplant care for optimal long-term outcomes.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Dialysis Oversight</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Prescription, oversight, and troubleshooting for hemodialysis and peritoneal dialysis regimens, ensuring optimal patient safety and fluid balance.
-              </p>
-            </div>
-          </div>
+          </Link>
 
-          {/* Card 3: Hypertension */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" 
-                alt="Hypertension & Care" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+          {/* 2. Renal Failure Management */}
+          <Link href="/services/renal-failure-management" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                  alt="Renal Failure Management"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Renal Failure Management</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Holistic management of acute and chronic renal failure, focusing on improving quality of life and preventing systemic complications.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Hypertension & Care</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Specialized evaluation and treatment for hard-to-control or treatment-resistant high blood pressure and renal artery protection.
-              </p>
-            </div>
-          </div>
+          </Link>
 
-          {/* Card 4: Glomerular */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" 
-                alt="Glomerular Disorders" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+          {/* 3. Chronic Kidney Disease (CKD) */}
+          <Link href="/services/chronic-kidney-disease" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80"
+                  alt="Chronic Kidney Disease (CKD)"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Chronic Kidney Disease (CKD)</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Personalized treatment plans to slow disease progression and manage complications of CKD through evidence-based approaches.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Glomerular Disorders</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Diagnosis and targeted management of glomerulonephritis, nephrotic syndrome, and autoimmune-related kidney diseases.
-              </p>
-            </div>
-          </div>
+          </Link>
 
-          {/* Card 5: Electrolyte */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=800&q=80" 
-                alt="Electrolyte Disorders" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+          {/* 4. Dialysis Management */}
+          <Link href="/services/dialysis-management" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
+                  alt="Dialysis Management"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Dialysis Management</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    State-of-the-art oversight and prescription for comprehensive dialysis management, ensuring maximum patient comfort and efficacy.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Electrolyte Disorders</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Critical evaluation and correction of severe sodium, potassium, calcium, and pH blood imbalances.
-              </p>
-            </div>
-          </div>
+          </Link>
 
-          {/* Card 6: Kidney Stones */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" 
-                alt="Kidney Stone Prevention" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+          {/* 5. Peritoneal Dialysis */}
+          <Link href="/services/peritoneal-dialysis" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                  alt="Peritoneal Dialysis"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Peritoneal Dialysis</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Training and professional support for home-based peritoneal dialysis, offering flexibility and convenience for eligible patients.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Kidney Stone Prevention</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Metabolic workups and medical prevention protocols for recurring nephrolithiasis and stones.
-              </p>
+          </Link>
+
+          {/* 6. Hemodialysis */}
+          <Link href="/services/hemodialysis" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+                  alt="Hemodialysis"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Hemodialysis</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Advanced hemodialysis unit oversight with skilled support staff, providing efficient and safe blood purification sessions.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
+
+          {/* 7. Hypertension Related Kidney Disorders */}
+          <Link href="/services/hypertension-related-kidney-disorders" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+                  alt="Hypertension Related Kidney Disorders"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Hypertension Related Kidney Disorders</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Specialized care for kidney-related high blood pressure and resistant hypertension cases with advanced treatment options.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* 8. Diabetic Kidney Disease */}
+          <Link href="/services/diabetic-kidney-disease" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80"
+                  alt="Diabetic Kidney Disease"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Diabetic Kidney Disease</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Proactive screening and management for kidney complications arising from diabetes, preserving vital kidney function.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          {/* 9. Glomerular Disorders */}
+          <Link href="/services/glomerular-disorders" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
+                  alt="Glomerular Disorders"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Glomerular Disorders</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Diagnosis and targeted management of glomerulonephritis, nephrotic syndrome, and autoimmune-related kidney diseases.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
 
         </div>
       </section>
@@ -148,42 +283,60 @@ export default function ServicesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* Diabetes */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" 
-                alt="Diabetes & Management" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
-            </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Diabetes & Management</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Comprehensive blood sugar control, prevention of diabetic complications (particularly diabetic nephropathy), and lifestyle counselling.
-              </p>
-            </div>
-          </div>
 
-          {/* Infectious Diseases */}
-          <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 group">
-            <div className="relative h-64 w-full overflow-hidden bg-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" 
-                alt="Infectious Diseases & Fevers" 
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+          {/* Electrolyte & Stones */}
+          <Link href="/services/electrolyte-disorders" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=800&q=80"
+                  alt="Electrolyte Disorders & Stone Prevention"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Electrolyte Disorders & Stone Prevention</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Critical evaluation and correction of blood electrolyte imbalances, alongside metabolic prevention protocols for kidney stones.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-2">
-              <h3 className="text-lg font-bold text-slate-900">Infectious Diseases & Fevers</h3>
-              <p className="text-slate-600 text-xs leading-relaxed">
-                Accurate diagnosis and evidence-based management of acute fevers, respiratory infections, and systemic illnesses.
-              </p>
+          </Link>
+
+          {/* Infectious Diseases & Fevers */}
+          <Link href="/services/infectious-diseases" className="group block h-full">
+            <div className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900 h-full flex flex-col justify-between group-hover:shadow-xl group-hover:-translate-y-1 transition duration-300">
+              <div className="relative h-64 w-full overflow-hidden bg-slate-800">
+                <img
+                  src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
+                  alt="Infectious Diseases & Fevers"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-white/95 backdrop-blur-md m-4 rounded-2xl shadow-md space-y-3 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition">Infectious Diseases & Fevers</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed mt-1">
+                    Accurate diagnosis and evidence-based management of acute fevers, respiratory infections, and systemic adult illnesses.
+                  </p>
+                </div>
+                <div className="flex justify-end pt-2 border-t border-slate-100">
+                  <span className="text-xs font-semibold text-blue-600 group-hover:text-blue-800 uppercase tracking-wider transition">
+                    Know More &rarr;
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
         </div>
       </section>
@@ -193,11 +346,11 @@ export default function ServicesPage() {
         <div className="max-w-3xl mx-auto space-y-6">
           <h2 className="text-3xl font-bold">Need a consultation or medical second opinion?</h2>
           <p className="text-blue-100 text-sm sm:text-base">
-            Book an appointment at one of Dr. Sourav Sarkar's clinic chambers or hospital attachments across Kolkata.
+            Book an appointment at one of Dr. Sourav Sarkar&apos;s clinic chambers or hospital attachments across Kolkata.
           </p>
           <div>
-            <Link 
-              href="/contacts" 
+            <Link
+              href="/contacts"
               className="inline-block bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3.5 rounded-xl shadow-md transition"
             >
               Book Consultation Now

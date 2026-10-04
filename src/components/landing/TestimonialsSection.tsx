@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
                                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                                 </div>
                                 <p className="text-slate-700 text-sm leading-relaxed italic">
-                                    "{item.quote}"
+                                    &quot;{item.quote}&quot;
                                 </p>
                             </div>
                             <div className="pt-4 border-t border-slate-100">

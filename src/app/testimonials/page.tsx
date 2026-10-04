@@ -97,7 +97,7 @@ export default function TestimonialsPage() {
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic">
-                "Dr. Sourav Sarkar is exceptionally patient and thorough. He explained my father's chronic kidney disease stages in simple terms and guided us through the exact dietary and medication adjustments needed. Truly a blessing for our family."
+                &quot;Dr. Sourav Sarkar is exceptionally patient and thorough. He explained my father&apos;s chronic kidney disease stages in simple terms and guided us through the exact dietary and medication adjustments needed. Truly a blessing for our family.&quot;
               </p>
             </div>
             <div className="pt-4 border-t border-slate-100">
@@ -113,7 +113,7 @@ export default function TestimonialsPage() {
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic">
-                "Finding a nephrologist who listens without rushing you is rare. Dr. Sarkar managed my fluctuating blood pressure and renal parameters with immense care. His YouTube channel (BongDoc) also gave me so much confidence."
+                &quot;Finding a nephrologist who listens without rushing you is rare. Dr. Sarkar managed my fluctuating blood pressure and renal parameters with immense care. His YouTube channel (BongDoc) also gave me so much confidence.&quot;
               </p>
             </div>
             <div className="pt-4 border-t border-slate-100">
@@ -129,7 +129,7 @@ export default function TestimonialsPage() {
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic">
-                "Consulted him at Galaxy Hospital in Barrackpur for recurrent urinary and renal issues. His diagnosis was spot on, and the treatment plan worked wonders. Highly professional and humble doctor."
+                &quot;Consulted him at Galaxy Hospital in Barrackpur for recurrent urinary and renal issues. His diagnosis was spot on, and the treatment plan worked wonders. Highly professional and humble doctor.&quot;
               </p>
             </div>
             <div className="pt-4 border-t border-slate-100">
@@ -145,7 +145,7 @@ export default function TestimonialsPage() {
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic">
-                "His ability to break down complex medical terms in Bengali through BongDoc is amazing. When we visited him at Phoolbagan, he gave us complete time and addressed all our anxiety regarding dialysis care."
+                &quot;His ability to break down complex medical terms in Bengali through BongDoc is amazing. When we visited him at Phoolbagan, he gave us complete time and addressed all our anxiety regarding dialysis care.&quot;
               </p>
             </div>
             <div className="pt-4 border-t border-slate-100">
@@ -161,7 +161,7 @@ export default function TestimonialsPage() {
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic">
-                "One of the best internal medicine specialists in Kolkata. His calm demeanor and accurate diagnosis for persistent fever and weakness helped me recover very quickly."
+                &quot;One of the best internal medicine specialists in Kolkata. His calm demeanor and accurate diagnosis for persistent fever and weakness helped me recover very quickly.&quot;
               </p>
             </div>
             <div className="pt-4 border-t border-slate-100">
@@ -177,7 +177,7 @@ export default function TestimonialsPage() {
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <p className="text-slate-700 text-sm leading-relaxed italic">
-                "Very structured approach to kidney stone prevention and lifestyle counseling. We travel from outstation for his weekend consultations because his treatment makes a genuine difference."
+                &quot;Very structured approach to kidney stone prevention and lifestyle counseling. We travel from outstation for his weekend consultations because his treatment makes a genuine difference.&quot;
               </p>
             </div>
             <div className="pt-4 border-t border-slate-100">

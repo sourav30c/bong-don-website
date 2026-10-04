@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function AppointmentCtaSection() {
     const [submitted, setSubmitted] = useState(false);
@@ -38,7 +39,7 @@ export default function AppointmentCtaSection() {
                             <form onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">First Name</label>
+                                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">First Name  *</label>
                                         <input
                                             type="text"
                                             required
@@ -47,7 +48,7 @@ export default function AppointmentCtaSection() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Last Name</label>
+                                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Last Name  *</label>
                                         <input
                                             type="text"
                                             required
@@ -68,7 +69,7 @@ export default function AppointmentCtaSection() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number</label>
+                                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number *</label>
                                         <input
                                             type="tel"
                                             required
@@ -141,13 +142,14 @@ export default function AppointmentCtaSection() {
                         )}
                     </div>
 
-                    {/* Right Column: Professional Medical Image (Using standard <img> to bypass domain restriction) */}
+                    {/* Right Column: Professional Medical Image */}
                     <div className="lg:col-span-5 relative h-full min-h-[500px] lg:min-h-[700px] w-full hidden lg:block overflow-hidden">
-                        <img
+                        <Image
                             src="/appointment.png"
-                            //src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80"
                             alt="Doctor Consultation"
-                            className="absolute inset-0 w-full h-full object-cover object-center"
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 500px"
+                            className="object-cover object-center"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent flex items-end p-8">
                             <div className="text-white space-y-1">
