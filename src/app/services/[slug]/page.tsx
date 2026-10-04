@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 const servicesData: Record<string, {
@@ -155,7 +156,13 @@ const servicesData: Record<string, {
     }
 };
 
-export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+export function generateStaticParams() {
+    return Object.keys(servicesData).map((slug) => ({
+        slug,
+    }));
+}
+
+export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const service = servicesData[slug];
 
@@ -179,10 +186,12 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
 
                     {/* Left Column: Large Image (Span 6) */}
                     <div className="lg:col-span-6 relative h-[350px] sm:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-slate-200">
-                        <img
+                        <Image
                             src={service.heroImage}
                             alt={service.title}
-                            className="w-full h-full object-cover object-center"
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 600px"
+                            className="object-cover object-center"
                         />
                     </div>
 
