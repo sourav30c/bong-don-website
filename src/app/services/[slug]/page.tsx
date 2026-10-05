@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const servicesData: Record<string, {
     title: string;
@@ -81,7 +82,7 @@ const servicesData: Record<string, {
         category: "OUR SERVICES",
         description: "Advanced hemodialysis unit oversight with skilled support staff, providing efficient and safe blood purification sessions. Hemodialysis cleanses the blood externally using a specialized dialyzer machine. Dr. Sarkar coordinates closely with high-end hospital dialysis units to ensure sterile, smooth, and effective blood purification.",
         heroImage: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=1000&q=80",
-        overview: "Hemodialysis cleanses the blood externally using a specialized dialyzer machine. Dr. Sarkar coordinates closely with high-end hospital dialysis units to ensure sterile, smooth, and effective blood purification.",
+        overview: "Advanced hemodialysis unit oversight with skilled support staff, providing efficient and safe blood purification sessions. Hemodialysis cleanses the blood externally using a specialized dialyzer machine. Dr. Sarkar coordinates closely with high-end hospital dialysis units to ensure sterile, smooth, and effective blood purification.",
         keyPoints: ["Accurate Diagnosis", "Tailored Treatment", "Ongoing Monitoring"],
         treatmentApproach: [
             "Customized blood flow and dialysate flow rates",
@@ -107,7 +108,7 @@ const servicesData: Record<string, {
         category: "OUR SERVICES",
         description: "Proactive screening and management for kidney complications arising from diabetes, preserving vital kidney function. Diabetic nephropathy is the leading cause of chronic kidney disease worldwide. Early detection via urine albumin tests and modern glucose-lowering agents with kidney-protective profiles can arrest disease progression.",
         heroImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=80",
-        overview: "Diabetic nephropathy is the leading cause of chronic kidney disease worldwide. Early detection via urine albumin tests and modern glucose-lowering agents with kidney-protective profiles can arrest disease progression.",
+        overview: "Proactive screening and management for kidney complications arising from diabetes, preserving vital kidney function. Diabetic nephropathy is the leading cause of chronic kidney disease worldwide. Early detection via urine albumin tests and modern glucose-lowering agents with kidney-protective profiles can arrest disease progression.",
         keyPoints: ["Accurate Diagnosis", "Tailored Treatment", "Ongoing Monitoring"],
         treatmentApproach: [
             "Multidisciplinary diabetes-nephrology alignment",
@@ -172,58 +173,105 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
     return (
         <div className="bg-white min-h-screen py-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
                 {/* Back Link */}
-                <div>
-                    <Link href="/services" className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-semibold transition">
-                        &larr; Back to All Services
-                    </Link>
-                </div>
+                <ScrollReveal>
+                    <div>
+                        <Link
+                            href="/services"
+                            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm font-bold transition-all duration-300 group"
+                        >
+                            <span className="transform group-hover:-translate-x-1 transition-transform">&larr;</span>
+                            <span>Back to All Services</span>
+                        </Link>
+                    </div>
+                </ScrollReveal>
 
                 {/* 2-Column Split Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
                     {/* Left Column: Large Image (Span 6) */}
-                    <div className="lg:col-span-6 relative h-[350px] sm:h-[450px] rounded-3xl overflow-hidden shadow-lg border border-slate-200">
-                        <Image
-                            src={service.heroImage}
-                            alt={service.title}
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 600px"
-                            className="object-cover object-center"
-                        />
+                    <div className="lg:col-span-6">
+                        <ScrollReveal>
+                            <div className="relative h-[350px] sm:h-[450px] rounded-3xl overflow-hidden shadow-xl border border-slate-200 group">
+                                <Image
+                                    src={service.heroImage}
+                                    alt={service.title}
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 600px"
+                                    className="object-cover object-center group-hover:scale-105 transition duration-700 ease-out"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
+                            </div>
+                        </ScrollReveal>
                     </div>
 
                     {/* Right Column: Title, Description & Highlights (Span 6) */}
                     <div className="lg:col-span-6 space-y-6">
-                        <div className="space-y-2">
-                            <span className="text-xs font-bold uppercase tracking-widest text-amber-600">
-                                {service.category}
-                            </span>
-                            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-                                {service.title}
-                            </h1>
-                        </div>
+                        <ScrollReveal>
+                            <div className="space-y-3">
+                                <span className="text-xs font-bold uppercase tracking-widest bg-amber-100 text-amber-800 border border-amber-200 px-3.5 py-1 rounded-full shadow-sm">
+                                    {service.category}
+                                </span>
+                                <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                                    {service.title}
+                                </h1>
+                            </div>
+                        </ScrollReveal>
 
-                        <p className="text-slate-600 text-base leading-relaxed">
-                            {service.description}
-                        </p>
+                        <ScrollReveal>
+                            <p className="text-slate-600 text-base leading-relaxed">
+                                {service.description}
+                            </p>
+                        </ScrollReveal>
 
-                        <div className="space-y-3 pt-2">
-                            <h3 className="text-lg font-bold text-slate-950">Key Highlights:</h3>
-                            <ul className="space-y-2.5">
-                                {service.keyPoints.map((point, index) => (
-                                    <li key={index} className="flex items-center gap-3 text-slate-700 text-sm font-medium">
-                                        <span className="text-emerald-600 font-bold text-base">✓</span>
-                                        <span>{point}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        <ScrollReveal>
+                            <div className="space-y-4 pt-2 border-t border-slate-100">
+                                <h3 className="text-lg font-bold text-slate-950">Key Highlights:</h3>
+                                <ul className="space-y-3">
+                                    {service.keyPoints.map((point, index) => (
+                                        <li key={index} className="flex items-center gap-3 text-slate-700 text-sm font-semibold bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                            <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">✓</span>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </ScrollReveal>
+
+                        <ScrollReveal>
+                            <div className="pt-4">
+                                <Link
+                                    href="/contacts"
+                                    className="inline-block w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold text-center px-8 py-3.5 rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1"
+                                >
+                                    Book Consultation for {service.title} &rarr;
+                                </Link>
+                            </div>
+                        </ScrollReveal>
                     </div>
 
                 </div>
+
+                {/* Treatment Approach Section */}
+                {service.treatmentApproach && service.treatmentApproach.length > 0 && (
+                    <ScrollReveal>
+                        <div className="bg-slate-50 rounded-3xl p-8 sm:p-12 border border-slate-200 space-y-6 shadow-sm">
+                            <h3 className="text-2xl font-bold text-slate-900">Treatment & Clinical Approach</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {service.treatmentApproach.map((step, idx) => (
+                                    <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 space-y-3 shadow-xs">
+                                        <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm">
+                                            0{idx + 1}
+                                        </div>
+                                        <p className="text-slate-700 text-sm leading-relaxed font-medium">{step}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </ScrollReveal>
+                )}
 
             </div>
         </div>
