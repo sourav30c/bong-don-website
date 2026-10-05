@@ -54,7 +54,7 @@ export default function ClinicsPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen">
-      
+
       {/* Header Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         <ScrollReveal>
@@ -76,8 +76,8 @@ export default function ClinicsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <ScrollReveal>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 h-[380px] sm:h-[480px] group">
-            <Image 
-              src={galleryImages[currentIndex].url} 
+            <Image
+              src={galleryImages[currentIndex].url}
               alt={galleryImages[currentIndex].title}
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"
@@ -85,7 +85,7 @@ export default function ClinicsPage() {
               className="object-cover object-center transition-all duration-1000 ease-in-out scale-100 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
-            
+
             {/* Caption Overlay */}
             <div className="absolute bottom-8 left-8 right-8 text-white space-y-2 z-10">
               <span className="bg-blue-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow">
@@ -97,14 +97,14 @@ export default function ClinicsPage() {
             </div>
 
             {/* Navigation Arrows */}
-            <button 
+            <button
               onClick={prevSlide}
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md text-xl font-bold border border-white/20 z-20"
               aria-label="Previous Image"
             >
               &#10094;
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md text-xl font-bold border border-white/20 z-20"
               aria-label="Next Image"
@@ -115,7 +115,7 @@ export default function ClinicsPage() {
             {/* Pagination Indicators */}
             <div className="absolute bottom-8 right-8 hidden sm:flex space-x-2 z-20">
               {galleryImages.map((_, idx) => (
-                <button 
+                <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
                   className={`h-2.5 rounded-full transition-all duration-500 ${currentIndex === idx ? 'bg-blue-500 w-8' : 'bg-white/40 hover:bg-white w-2.5'}`}
@@ -130,7 +130,7 @@ export default function ClinicsPage() {
       {/* Clinics Grid Section with Entrance Animations */}
       <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
+
           {/* Chamber 1: Barrackpur */}
           <ScrollReveal className="h-full">
             <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6 flex flex-col justify-between transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl h-full">
@@ -142,7 +142,7 @@ export default function ClinicsPage() {
                   <h3 className="text-xl font-bold text-slate-900">Galaxy Hospital</h3>
                   <p className="text-slate-500 text-sm">Barrackpur, Kolkata</p>
                 </div>
-                
+
                 <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                   <p><strong className="text-slate-900">Days:</strong> Monday, Wednesday, Friday</p>
                   <p><strong className="text-slate-900">Timings:</strong> 7:00 PM – 10:00 PM</p>
@@ -167,11 +167,11 @@ export default function ClinicsPage() {
                 </div>
               </div>
 
-              <Link 
-                href="/contacts" 
+              <Link
+                href="/contacts"
                 className="block w-full bg-slate-50 hover:bg-blue-600 hover:text-white text-slate-800 text-center font-bold py-3 rounded-xl border border-slate-200 transition-colors duration-300 text-sm shadow-xs"
               >
-                Book for Barrackpur &rarr;
+                Inquire for Barrackpur &rarr;
               </Link>
             </div>
           </ScrollReveal>
@@ -187,7 +187,7 @@ export default function ClinicsPage() {
                   <h3 className="text-xl font-bold text-slate-900">Kidney Suraksha Specialist & Diagnostic Center</h3>
                   <p className="text-slate-500 text-sm">Barasat, Kolkata</p>
                 </div>
-                
+
                 <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                   <p><strong className="text-slate-900">Days:</strong> Tuesday & Thursday</p>
                   <p><strong className="text-slate-900">Timings:</strong> Evening Hours</p>
@@ -212,11 +212,11 @@ export default function ClinicsPage() {
                 </div>
               </div>
 
-              <Link 
-                href="/contacts" 
+              <Link
+                href="/contacts"
                 className="block w-full bg-slate-50 hover:bg-emerald-600 hover:text-white text-slate-800 text-center font-bold py-3 rounded-xl border border-slate-200 transition-colors duration-300 text-sm shadow-xs"
               >
-                Book for Barasat &rarr;
+                Inquire for Barasat &rarr;
               </Link>
             </div>
           </ScrollReveal>
@@ -232,7 +232,7 @@ export default function ClinicsPage() {
                   <h3 className="text-xl font-bold text-slate-900">Sustho Clinic</h3>
                   <p className="text-slate-500 text-sm">Phoolbagan, Kolkata</p>
                 </div>
-                
+
                 <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                   <p><strong className="text-slate-900">Wednesday:</strong> 9:00 AM – 11:00 AM</p>
                   <p><strong className="text-slate-900">Saturday:</strong> 7:00 PM – 10:00 PM</p>
@@ -257,11 +257,11 @@ export default function ClinicsPage() {
                 </div>
               </div>
 
-              <Link 
-                href="/contacts" 
+              <Link
+                href="/contacts"
                 className="block w-full bg-slate-50 hover:bg-purple-600 hover:text-white text-slate-800 text-center font-bold py-3 rounded-xl border border-slate-200 transition-colors duration-300 text-sm shadow-xs"
               >
-                Book for Phoolbagan &rarr;
+                Inquire for Phoolbagan &rarr;
               </Link>
             </div>
           </ScrollReveal>
@@ -275,7 +275,7 @@ export default function ClinicsPage() {
                 </span>
                 <h3 className="text-xl font-bold text-slate-900">Burdwan & Chuchura Chambers</h3>
                 <p className="text-slate-500 text-sm">Outstation Consultations</p>
-                
+
                 <div className="pt-4 border-t border-slate-100 space-y-2 text-sm text-slate-700">
                   <p><strong className="text-slate-900">Schedule:</strong> Sunday (Whole Day)</p>
                   <p><strong className="text-slate-900">Locations:</strong> Periodic availability across Burdwan and Chuchura chambers. Please call ahead to confirm exact token slots.</p>
@@ -283,8 +283,8 @@ export default function ClinicsPage() {
               </div>
 
               <div className="pt-4">
-                <Link 
-                  href="/contacts" 
+                <Link
+                  href="/contacts"
                   className="inline-block bg-slate-900 hover:bg-blue-600 text-white font-bold px-8 py-3 rounded-xl transition-all duration-300 text-sm shadow-md hover:shadow-lg"
                 >
                   Inquire for Sunday Slots &rarr;
@@ -305,8 +305,8 @@ export default function ClinicsPage() {
               Get in touch with the reception desk or drop an inquiry to secure your preferred slot.
             </p>
             <div>
-              <Link 
-                href="/contacts" 
+              <Link
+                href="/contacts"
                 className="inline-block bg-white text-blue-900 hover:bg-blue-50 font-bold px-8 py-3.5 rounded-2xl shadow-xl transition transform hover:-translate-y-1"
               >
                 Contact Reception Desk &rarr;
