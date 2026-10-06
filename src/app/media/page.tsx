@@ -70,16 +70,16 @@ export default function MediaPage() {
     <div className="bg-slate-50 min-h-screen">
 
       {/* Header Section */}
-      <section className="py-16 sm:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <section className="py-10 sm:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 sm:space-y-4">
         <ScrollReveal>
-          <div className="space-y-4">
-            <span className="inline-block bg-blue-100/80 text-blue-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-200 shadow-sm">
+          <div className="space-y-3 sm:space-y-4">
+            <span className="inline-block bg-blue-100/80 text-blue-800 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-widest border border-blue-200 shadow-sm">
               Patient Education & Digital Outreach
             </span>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
               Media, Vlogs & BongDoc
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
               Watch expert medical insights, kidney care guidance, and health awareness discussions hosted by Dr. Sourav Sarkar on his official YouTube channel.
             </p>
           </div>
@@ -87,21 +87,21 @@ export default function MediaPage() {
       </section>
 
       {/* Featured Video Embeds Section */}
-      <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pb-12 sm:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-600">Video Library</span>
-            <h2 className="text-3xl font-extrabold text-slate-900 border-l-4 border-blue-600 pl-3.5 mt-1">
+          <div className="mb-6 sm:mb-10">
+            <span className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-blue-600">Video Library</span>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 border-l-4 border-blue-600 pl-3 sm:pl-3.5 mt-1 leading-tight">
               Featured Videos & Discussions
             </h2>
-            <p className="text-slate-600 text-sm mt-1.5">Direct insights into kidney health, dialysis care, Vitamin D, fatty liver, and overall wellness.</p>
+            <p className="text-slate-600 text-xs sm:text-sm mt-1.5">Direct insights into kidney health, dialysis care, Vitamin D, fatty liver, and overall wellness.</p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {videos.map((video) => (
             <ScrollReveal key={video.id} className="h-full">
-              <div className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col h-full transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl group">
+              <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 shadow-sm flex flex-col h-full transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl group">
                 
                 {/* Video Container (Lazy-loaded player facade) */}
                 <div className="relative w-full aspect-video bg-slate-900 overflow-hidden cursor-pointer">
@@ -127,39 +127,39 @@ export default function MediaPage() {
                         unoptimized
                       />
                       <div className="absolute inset-0 bg-slate-950/25 group-hover/thumb:bg-slate-950/40 transition-colors duration-300 flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-red-600 group-hover/thumb:bg-red-700 text-white flex items-center justify-center shadow-lg group-hover/thumb:scale-110 transition-all duration-300 pl-1">
-                          <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-red-600 group-hover/thumb:bg-red-700 text-white flex items-center justify-center shadow-lg group-hover/thumb:scale-110 transition-all duration-300 pl-0.5 sm:pl-1">
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z" />
                           </svg>
                         </div>
                       </div>
-                      <span className="absolute bottom-3 right-3 bg-black/75 text-white text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-xs">
+                      <span className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 bg-black/75 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded backdrop-blur-xs">
                         Click to Play
                       </span>
                     </div>
                   )}
                 </div>
 
-                <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
+                <div className="p-4 sm:p-6 space-y-3 flex-grow flex flex-col justify-between">
                   <div>
-                    <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
+                    <span className="text-[10px] sm:text-[11px] font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
                       {video.category}
                     </span>
-                    <h3 className="text-base font-bold text-slate-900 mt-2.5 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 mt-2 sm:mt-2.5 line-clamp-2 group-hover:text-blue-600 transition-colors">
                       {video.title}
                     </h3>
-                    <p className="text-slate-600 text-xs leading-relaxed mt-2 line-clamp-2">
+                    <p className="text-slate-600 text-xs leading-relaxed mt-1.5 sm:mt-2 line-clamp-2">
                       {video.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                    <span className="font-semibold text-slate-400">Source: BongDoc</span>
+                  <div className="pt-3 sm:pt-4 border-t border-slate-100 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-xs text-slate-500">
+                    <span className="font-semibold text-slate-400 text-[11px] sm:text-xs">Source: BongDoc</span>
                     <a
                       href={video.youtubeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 font-bold hover:text-blue-800 transition-colors flex items-center gap-1 group-hover:translate-x-1 duration-200"
+                      className="text-blue-600 font-bold hover:text-blue-800 transition-colors flex items-center gap-1 text-[11px] sm:text-xs group-hover:translate-x-1 duration-200"
                     >
                       <span>Watch on YouTube</span>
                       <span>&rarr;</span>
