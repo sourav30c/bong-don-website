@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 
 export default function AboutPage() {
@@ -19,11 +18,58 @@ export default function AboutPage() {
                     </p>
                 </div>
 
-                {/* Main Equal-Height Grid Section (No Separate Cards) */}
+                {/* Main Equal-Height Grid Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
 
-                    {/* Left Column: Clinical Philosophy & Table Structure (Span 7) */}
-                    <div className="lg:col-span-7 flex flex-col justify-between space-y-6 sm:space-y-8">
+                    {/* Right Column: Profile Image + Talks, Memberships & Languages (Span 5) - Order 1 on Mobile */}
+                    <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col justify-between space-y-5 sm:space-y-6 bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm">
+
+                        {/* Profile Image */}
+                        <div className="relative w-full h-[240px] min-[400px]:h-[280px] sm:h-[320px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-200 shadow-md">
+                            <Image
+                                src="/LandingProfImage_2.jpg"
+                                alt="Dr. Sourav Sarkar"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 400px"
+                                className="object-cover object-center"
+                                priority
+                            />
+                        </div>
+
+                        {/* Talks & Publications */}
+                        <div className="space-y-1 bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200">
+                            <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider text-blue-700">
+                                Talks & Publications
+                            </h4>
+                            <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                                25+ scientific publications and clinical discussions in national and international journals on renal replacement, dialysis, and glomerular disorders.
+                            </p>
+                        </div>
+
+                        {/* Fellowship & Membership */}
+                        <div className="space-y-1 bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200">
+                            <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider text-blue-700">
+                                Fellowship & Membership
+                            </h4>
+                            <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                                Member of the Indian Society of Nephrology, Indian Society of Organ Transplant, American Society of Nephrology, and International Society of Nephrology.
+                            </p>
+                        </div>
+
+                        {/* Languages Spoken */}
+                        <div className="space-y-1 bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200">
+                            <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider text-blue-700">
+                                Languages Spoken
+                            </h4>
+                            <p className="text-[11px] sm:text-xs text-slate-700 font-medium">
+                                Bengali, Hindi, English
+                            </p>
+                        </div>
+
+                    </div>
+
+                    {/* Left Column: Clinical Philosophy & Table Structure (Span 7) - Order 2 on Mobile */}
+                    <div className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-between space-y-6 sm:space-y-8">
 
                         {/* Doctor Intro & Bio */}
                         <div className="space-y-3 sm:space-y-4">
@@ -78,53 +124,6 @@ export default function AboutPage() {
                                     <span className="sm:col-span-2 text-slate-600">Kidney Suraksha, Barasat & Sustho Clinic, Phoolbagan</span>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-
-                    {/* Right Column: Profile Image + Talks, Memberships & Languages (Span 5) */}
-                    <div className="lg:col-span-5 flex flex-col justify-between space-y-5 sm:space-y-6 bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm">
-
-                        {/* Profile Image */}
-                        <div className="relative w-full h-[240px] min-[400px]:h-[280px] sm:h-[320px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-200 shadow-md">
-                            <Image
-                                src="/LandingProfImage_2.jpg"
-                                alt="Dr. Sourav Sarkar"
-                                fill
-                                sizes="(max-width: 768px) 100vw, 400px"
-                                className="object-cover object-center"
-                                priority
-                            />
-                        </div>
-
-                        {/* Talks & Publications */}
-                        <div className="space-y-1 bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200">
-                            <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider text-blue-700">
-                                Talks & Publications
-                            </h4>
-                            <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
-                                25+ scientific publications and clinical discussions in national and international journals on renal replacement, dialysis, and glomerular disorders.
-                            </p>
-                        </div>
-
-                        {/* Fellowship & Membership */}
-                        <div className="space-y-1 bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200">
-                            <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider text-blue-700">
-                                Fellowship & Membership
-                            </h4>
-                            <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
-                                Member of the Indian Society of Nephrology, Indian Society of Organ Transplant, American Society of Nephrology, and International Society of Nephrology.
-                            </p>
-                        </div>
-
-                        {/* Languages Spoken */}
-                        <div className="space-y-1 bg-slate-50 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200">
-                            <h4 className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-wider text-blue-700">
-                                Languages Spoken
-                            </h4>
-                            <p className="text-[11px] sm:text-xs text-slate-700 font-medium">
-                                Bengali, Hindi, English
-                            </p>
                         </div>
 
                     </div>
