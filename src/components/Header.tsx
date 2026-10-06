@@ -25,17 +25,17 @@ export default function Header() {
         {/* Brand Logo & Name */}
         <Link 
           href="/" 
-          className="flex items-center gap-2 group text-left"
+          className="flex items-center gap-2 group text-left min-w-0"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-blue-700 transition">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-base sm:text-lg shadow-md group-hover:bg-blue-700 transition flex-shrink-0">
             DS
           </div>
-          <div>
-            <div className="font-bold text-lg leading-tight tracking-tight text-slate-900 group-hover:text-blue-600 transition">
+          <div className="min-w-0">
+            <div className="font-bold text-base sm:text-lg leading-tight tracking-tight text-slate-900 group-hover:text-blue-600 transition truncate">
               Dr. Sourav Sarkar
             </div>
-            <div className="text-[11px] font-medium text-slate-500 tracking-wide uppercase">
+            <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 tracking-wide uppercase truncate">
               DM Nephrology & MD Medicine
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Header() {
         </nav>
 
         {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <Link 
             href="/contacts" 
             className="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm transition items-center gap-1.5"
@@ -74,7 +74,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition focus:outline-none"
+            className="lg:hidden p-2 sm:p-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition focus:outline-none"
             aria-label="Toggle Navigation Menu"
             aria-expanded={isMobileMenuOpen}
           >
@@ -93,7 +93,7 @@ export default function Header() {
 
       {/* Mobile Navigation Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl px-4 pt-3 pb-6 space-y-3">
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl px-4 pt-3 pb-6 space-y-3 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;

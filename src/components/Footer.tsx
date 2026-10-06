@@ -225,7 +225,7 @@ export default function Footer() {
                 <Link href="/testimonials" className="hover:text-blue-400 transition">Testimonials</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-blue-400 transition">Contact Us</Link>
+                <Link href="/contacts" className="hover:text-blue-400 transition">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -257,13 +257,13 @@ export default function Footer() {
               </div>
 
               <div className="pt-2 border-t border-slate-800/80 space-y-1">
-                <p><strong className="text-white">Phone:</strong> +91 98310 30908</p>
-                <p><strong className="text-white">Email:</strong> contact@drsouravsarkar.com</p>
+                <p><strong className="text-white">Phone:</strong> +91 824 094 8974</p>
+                <p><strong className="text-white">Email:</strong> <span className="break-all sm:break-normal">contact@drsouravsarkar.com</span></p>
               </div>
 
               <div className="pt-1">
                 <Link 
-                  href="/contact" 
+                  href="/contacts" 
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition shadow-sm"
                 >
                   Book Consultation &rarr;
