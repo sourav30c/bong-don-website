@@ -62,8 +62,8 @@ export default function HeroSection() {
                         />
                     </div>
 
-                    {/* Gradient Overlay: Deep at top/bottom for readability while keeping upper doctor image clear */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-slate-950/40 sm:bg-gradient-to-r sm:from-slate-950 sm:via-slate-950/85 sm:to-transparent lg:w-4/5 z-10"></div>
+                    {/* Gradient Overlay: Left to right dark overlay for text readability without creating bottom horizontal lines */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent lg:w-4/5 z-10"></div>
                 </div>
             ))}
 
@@ -137,6 +137,9 @@ export default function HeroSection() {
                     ))}
                 </div>
             )}
+
+            {/* Soft Bottom Transition Gradient to smoothly blend dark Hero with light section below */}
+            <div className="absolute bottom-0 inset-x-0 h-24 sm:h-36 bg-gradient-to-b from-transparent via-slate-950/80 via-70% to-slate-50 pointer-events-none z-20"></div>
 
         </section>
     );
