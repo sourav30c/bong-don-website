@@ -109,7 +109,7 @@ function AnimatedCounter({ endValue, suffix }: { endValue: number; suffix: strin
     }, [endValue, hasAnimated]);
 
     return (
-        <div ref={ref} className="text-4xl sm:text-5xl font-extrabold text-blue-300 tracking-tight">
+        <div ref={ref} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-300 tracking-tight">
             {count.toLocaleString()}{suffix}
         </div>
     );
@@ -144,26 +144,26 @@ export default function StatisticsSection() {
     ];
 
     return (
-        <section className="py-16 bg-blue-900 text-white">
+        <section className="py-12 sm:py-16 bg-blue-900 text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+                <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
                     <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
                         Clinical Milestone & Impact
                     </h2>
-                    <p className="text-blue-200 text-sm">
+                    <p className="text-blue-200 text-xs sm:text-sm">
                         Delivering trusted, evidence-based renal care backed by consistent clinical achievements.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                     {stats.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl text-center space-y-2 hover:bg-white/15 transition shadow-lg"
+                            className="bg-white/10 backdrop-blur-md border border-white/20 p-5 sm:p-8 rounded-2xl sm:rounded-3xl text-center space-y-2 hover:bg-white/15 transition shadow-lg"
                         >
                             <AnimatedCounter endValue={item.value} suffix={item.suffix} />
-                            <p className="text-lg font-bold text-white">
+                            <p className="text-base sm:text-lg font-bold text-white">
                                 {item.label}
                             </p>
                             <p className="text-xs text-blue-200">

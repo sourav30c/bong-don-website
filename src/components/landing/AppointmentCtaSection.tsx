@@ -12,31 +12,31 @@ export default function AppointmentCtaSection() {
     };
 
     return (
-        <section className="py-20 bg-white border-t border-slate-200">
+        <section className="py-12 sm:py-20 bg-white border-t border-slate-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-slate-50 rounded-2xl sm:rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
 
                     {/* Left Column: Booking Form */}
-                    <div className="lg:col-span-7 p-8 sm:p-12 space-y-6">
+                    <div className="lg:col-span-7 p-5 sm:p-8 lg:p-12 space-y-6">
                         <div className="space-y-2">
-                            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Book an Appointment</h2>
-                            <p className="text-slate-600 text-sm">Schedule your visit with Dr. Sourav Sarkar for expert nephrology care.</p>
+                            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Book an Appointment</h2>
+                            <p className="text-slate-600 text-xs sm:text-sm">Schedule your visit with Dr. Sourav Sarkar for expert nephrology care.</p>
                         </div>
 
                         {submitted ? (
-                            <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-8 rounded-2xl text-center space-y-3">
-                                <h4 className="text-xl font-bold">Appointment Request Received!</h4>
-                                <p className="text-sm">Thank you. Our receptionist desk will call you shortly to confirm your slot.</p>
+                            <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-6 sm:p-8 rounded-2xl text-center space-y-3">
+                                <h4 className="text-lg sm:text-xl font-bold">Appointment Request Received!</h4>
+                                <p className="text-xs sm:text-sm">Thank you. Our receptionist desk will call you shortly to confirm your slot.</p>
                                 <button
                                     onClick={() => setSubmitted(false)}
-                                    className="mt-4 px-6 py-2 bg-emerald-600 text-white rounded-xl text-sm font-medium hover:bg-emerald-700 transition"
+                                    className="mt-4 px-6 py-2.5 bg-emerald-600 text-white rounded-xl text-xs sm:text-sm font-medium hover:bg-emerald-700 transition min-h-[44px]"
                                 >
                                     Book Another Appointment
                                 </button>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-5">
+                            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">First Name  *</label>
@@ -44,7 +44,7 @@ export default function AppointmentCtaSection() {
                                             type="text"
                                             required
                                             placeholder="First Name"
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800"
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]"
                                         />
                                     </div>
                                     <div>
@@ -53,7 +53,7 @@ export default function AppointmentCtaSection() {
                                             type="text"
                                             required
                                             placeholder="Last Name"
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800"
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]"
                                         />
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@ export default function AppointmentCtaSection() {
                                             type="email"
                                             required
                                             placeholder="Email Address"
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800"
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]"
                                         />
                                     </div>
                                     <div>
@@ -74,7 +74,7 @@ export default function AppointmentCtaSection() {
                                             type="tel"
                                             required
                                             placeholder="Phone Number"
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800"
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]"
                                         />
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@ export default function AppointmentCtaSection() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Select Gender</label>
-                                        <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800">
+                                        <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]">
                                             <option>Select Gender</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -94,7 +94,7 @@ export default function AppointmentCtaSection() {
                                         <input
                                             type="date"
                                             required
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800"
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]"
                                         />
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@ export default function AppointmentCtaSection() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Select Consultation Type</label>
-                                        <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800">
+                                        <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]">
                                             <option>General Consultation</option>
                                             <option>Chronic Kidney Disease (CKD)</option>
                                             <option>Dialysis Management</option>
@@ -116,7 +116,7 @@ export default function AppointmentCtaSection() {
                                         <input
                                             type="text"
                                             placeholder="Your Location"
-                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800"
+                                            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 min-h-[44px]"
                                         />
                                     </div>
                                 </div>
@@ -126,14 +126,14 @@ export default function AppointmentCtaSection() {
                                     <textarea
                                         rows={3}
                                         placeholder="Mention brief medical history or symptoms..."
-                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 resize-none"
+                                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm bg-white text-slate-800 resize-none min-h-[80px]"
                                     ></textarea>
                                 </div>
 
                                 <div>
                                     <button
                                         type="submit"
-                                        className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3.5 rounded-xl shadow transition text-base"
+                                        className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3.5 rounded-xl shadow transition text-base min-h-[48px] flex items-center justify-center"
                                     >
                                         Book Appointment
                                     </button>

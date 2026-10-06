@@ -123,11 +123,11 @@ export default function WhyChooseSection() {
     ];
 
     return (
-        <section className="py-20 bg-slate-50 border-t border-slate-200 overflow-hidden">
+        <section className="py-12 sm:py-20 bg-slate-50 border-t border-slate-200 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-3">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
                         Why Choose Dr. Sourav Sarkar
                     </h2>
@@ -142,7 +142,7 @@ export default function WhyChooseSection() {
                     {features.map((item, index) => (
                         <div
                             key={index}
-                            className="min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center bg-white p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-5 flex flex-col justify-between"
+                            className="min-w-[260px] min-[400px]:min-w-[290px] sm:min-w-[320px] md:min-w-0 snap-center bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-5 flex flex-col justify-between"
                         >
                             <div className="space-y-4">
                                 <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shadow-sm flex-shrink-0">

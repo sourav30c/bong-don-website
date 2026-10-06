@@ -75,11 +75,11 @@ export default function TestimonialsSection() {
     ];
 
     return (
-        <section className="py-20 bg-slate-50 border-t border-slate-200 overflow-hidden">
+        <section className="py-12 sm:py-20 bg-slate-50 border-t border-slate-200 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header with Arrow Controls */}
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-6">
                     <div className="space-y-3">
                         <span className="inline-block bg-blue-50 text-blue-700 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-blue-200">
                             Patient Experiences
@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
                         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
                             What Our Patients Say
                         </h2>
-                        <p className="text-slate-600 max-w-xl">
+                        <p className="text-slate-600 max-w-xl text-sm sm:text-base">
                             Your trust is our greatest reward. Read what our valued patients have to say about their journey to better health with us.
                         </p>
                     </div>
@@ -98,7 +98,7 @@ export default function TestimonialsSection() {
                             <button
                                 onClick={scrollLeft}
                                 aria-label="Scroll left"
-                                className="w-12 h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white transition text-lg font-bold"
+                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white transition text-base sm:text-lg font-bold"
                             >
                                 ←
                             </button>
@@ -107,7 +107,7 @@ export default function TestimonialsSection() {
                             <button
                                 onClick={scrollRight}
                                 aria-label="Scroll right"
-                                className="w-12 h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white transition text-lg font-bold"
+                                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white transition text-base sm:text-lg font-bold"
                             >
                                 →
                             </button>
@@ -124,12 +124,12 @@ export default function TestimonialsSection() {
                 {/* Horizontal Scrolling Container */}
                 <div
                     ref={scrollContainerRef}
-                    className="flex overflow-x-auto space-x-6 pb-6 pt-2 snap-x snap-mandatory scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
+                    className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-6 pt-2 snap-x snap-mandatory scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
                 >
                     {testimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="flex-shrink-0 w-80 sm:w-96 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6 snap-start hover:shadow-md transition"
+                            className="flex-shrink-0 w-[280px] min-[400px]:w-80 sm:w-96 bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6 snap-start hover:shadow-md transition"
                         >
                             <div className="space-y-4">
                                 <div className="flex text-amber-400 gap-1 text-lg">
