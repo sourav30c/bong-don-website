@@ -42,7 +42,7 @@ export default function HeroSection() {
     const activeSlide = slides[currentSlide] || slides[0];
 
     return (
-        <section className="relative overflow-hidden bg-slate-950 w-full min-h-[460px] sm:min-h-0 aspect-[16/11] sm:aspect-[16/9] lg:aspect-[21/9] flex items-end sm:items-center">
+        <section className="relative overflow-hidden bg-slate-950 w-full min-h-[440px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[560px] xl:min-h-[600px] flex items-end sm:items-center">
 
             {/* Background Banner Slides */}
             {slides.map((slide, index) => (
@@ -57,7 +57,7 @@ export default function HeroSection() {
                             alt={`Banner Slide ${index + 1}`}
                             fill
                             priority={index === 0}
-                            className="object-cover object-right sm:object-center lg:object-right"
+                            className="object-cover object-right-top"
                             sizes="100vw"
                         />
                     </div>
@@ -67,8 +67,8 @@ export default function HeroSection() {
                 </div>
             ))}
 
-            {/* Foreground Content - Shifted down closer to the slider line on mobile */}
-            <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-6 pb-8 sm:pb-14 w-full">
+            {/* Foreground Content */}
+            <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-14 w-full">
                 <div className="max-w-2xl space-y-3 sm:space-y-6 text-left">
 
                     {/* Top Pill Tag */}
