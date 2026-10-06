@@ -73,9 +73,9 @@ export default function ClinicsPage() {
       </section>
 
       {/* Interactive Auto-Sliding Chamber Photo Carousel */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-14">
         <ScrollReveal>
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900 h-[260px] min-[400px]:h-[320px] sm:h-[420px] lg:h-[480px] group">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900 h-48 min-[400px]:h-56 sm:h-72 md:h-80 lg:h-96 group transition-all duration-300">
             <Image
               src={galleryImages[currentIndex].url}
               alt={galleryImages[currentIndex].title}
@@ -87,11 +87,11 @@ export default function ClinicsPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
 
             {/* Caption Overlay */}
-            <div className="absolute bottom-4 left-4 right-14 sm:bottom-8 sm:left-8 sm:right-8 text-white space-y-1 sm:space-y-2 z-10">
-              <span className="bg-blue-600 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full uppercase tracking-wider shadow">
+            <div className="absolute bottom-3 left-3 right-12 sm:bottom-6 sm:left-6 sm:right-6 text-white space-y-1 sm:space-y-1.5 z-10">
+              <span className="inline-block bg-blue-600 text-white text-[9px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider shadow">
                 {galleryImages[currentIndex].location}
               </span>
-              <h3 className="text-base sm:text-2xl lg:text-3xl font-extrabold pt-1 sm:pt-2 text-white drop-shadow leading-snug line-clamp-2">
+              <h3 className="text-sm min-[400px]:text-base sm:text-xl lg:text-2xl font-extrabold pt-0.5 sm:pt-1 text-white drop-shadow leading-snug line-clamp-2">
                 {galleryImages[currentIndex].title}
               </h3>
             </div>
@@ -99,26 +99,26 @@ export default function ClinicsPage() {
             {/* Navigation Arrows */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-blue-600 text-white w-9 h-9 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md text-base sm:text-xl font-bold border border-white/20 z-20"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-blue-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md text-xs sm:text-base font-bold border border-white/20 z-20"
               aria-label="Previous Image"
             >
               &#10094;
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-blue-600 text-white w-9 h-9 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md text-base sm:text-xl font-bold border border-white/20 z-20"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-blue-600 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md text-xs sm:text-base font-bold border border-white/20 z-20"
               aria-label="Next Image"
             >
               &#10095;
             </button>
 
             {/* Pagination Indicators */}
-            <div className="absolute bottom-6 right-6 hidden sm:flex space-x-2 z-20">
+            <div className="absolute bottom-5 right-5 hidden sm:flex space-x-2 z-20">
               {galleryImages.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all duration-500 ${currentIndex === idx ? 'bg-blue-500 w-8' : 'bg-white/40 hover:bg-white w-2.5'}`}
+                  className={`h-2 rounded-full transition-all duration-500 ${currentIndex === idx ? 'bg-blue-500 w-6' : 'bg-white/40 hover:bg-white w-2'}`}
                   aria-label={`Slide ${idx + 1}`}
                 />
               ))}
