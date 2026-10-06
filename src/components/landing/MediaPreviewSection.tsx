@@ -143,7 +143,7 @@ export default function MediaPreviewSection() {
     ];
 
     return (
-        <section className="py-12 sm:py-20 bg-white overflow-hidden">
+        <section className="py-12 sm:py-16 bg-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
 
                 {/* Section Header with YouTube Button */}

@@ -156,11 +156,11 @@ export default function ClinicsSection() {
     ];
 
     return (
-        <section className="py-12 sm:py-20 bg-white border-t border-slate-200 overflow-hidden">
+        <section className="py-12 sm:py-16 bg-white border-t border-slate-200 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-16 gap-4 sm:gap-6">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
                     <div className="space-y-2 sm:space-y-3 max-w-2xl">
                         <span className="inline-block bg-blue-50 text-blue-700 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider border border-blue-200">
                             Chambers & Attachments

@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
     ];
 
     return (
-        <section className="py-12 sm:py-20 bg-slate-50 border-t border-slate-200 overflow-hidden">
+        <section className="py-12 sm:py-16 bg-slate-50 border-t border-slate-200 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header with Arrow Controls */}

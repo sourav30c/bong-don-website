@@ -160,8 +160,8 @@ export default function Header() {
           className="flex items-center gap-3 group text-left min-w-0"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          {/* Circular & Attractive Logo Container */}
-          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-blue-600/30 bg-blue-50 shadow-md group-hover:border-blue-600 transition flex-shrink-0 flex items-center justify-center">
+          {/* Circular & Glowing Logo Container */}
+          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-blue-600/30 bg-blue-50 shadow-md group-hover:border-blue-600 transition flex-shrink-0 flex items-center justify-center animate-logo-glow">
             <Image
               src="/logo-11.png" // Replace with your actual logo filename in the public folder
               alt="Dr. Sourav Sarkar Logo"

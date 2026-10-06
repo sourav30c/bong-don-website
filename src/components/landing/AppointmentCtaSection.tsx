@@ -12,7 +12,7 @@ export default function AppointmentCtaSection() {
     };
 
     return (
-        <section className="py-12 sm:py-20 bg-white border-t border-slate-200">
+        <section className="py-12 sm:py-16 bg-white border-t border-slate-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-slate-50 rounded-2xl sm:rounded-3xl border border-slate-200 overflow-hidden shadow-sm">

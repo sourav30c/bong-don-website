@@ -123,11 +123,11 @@ export default function WhyChooseSection() {
     ];
 
     return (
-        <section className="py-12 sm:py-20 bg-slate-50 border-t border-slate-200 overflow-hidden">
+        <section className="py-12 sm:py-16 bg-slate-50 border-t border-slate-200 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
-                <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 space-y-3">
+                <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-3">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
                         Why Choose Dr. Sourav Sarkar
                     </h2>
