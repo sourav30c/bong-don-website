@@ -632,7 +632,7 @@ export default function HeroSection() {
             {/* =========================================================
                 1. DESKTOP VIEW (Visible on lg screens and up)
                ========================================================= */}
-            <div className="hidden lg:flex relative overflow-hidden w-full aspect-[21/9] items-center">
+            <div className="hidden lg:flex relative overflow-hidden w-full aspect-[2.5/1] items-center">
                 {slides.map((slide, index) => (
                     <div
                         key={index}
@@ -652,18 +652,18 @@ export default function HeroSection() {
                     </div>
                 ))}
 
-                <div className="relative z-30 max-w-7xl mx-auto px-8 py-16 w-full">
-                    <div className="max-w-2xl space-y-6 text-left">
+                <div className="relative z-30 max-w-7xl mx-auto px-8 py-10 lg:py-12 w-full">
+                    <div className="max-w-2xl space-y-4 lg:space-y-5 text-left">
                         <div className="inline-flex items-center gap-2 bg-blue-600/90 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg backdrop-blur-sm border border-blue-400/30">
                             <span className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse flex-shrink-0"></span>
                             <span>{activeSlide.tag}</span>
                         </div>
 
-                        <div className="space-y-3">
-                            <h1 className="text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+                        <div className="space-y-2 lg:space-y-3">
+                            <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
                                 {activeSlide.titlePre} <span className="text-blue-400">{activeSlide.titleHighlight}</span>
                             </h1>
-                            <p className="text-base text-slate-200 leading-relaxed font-normal">
+                            <p className="text-sm lg:text-base text-slate-200 leading-relaxed font-normal">
                                 {activeSlide.description}
                             </p>
                         </div>
@@ -671,30 +671,30 @@ export default function HeroSection() {
                         <div className="flex items-center gap-4 pt-1">
                             <Link
                                 href="/contacts"
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-xl shadow-xl shadow-blue-600/30 transition-all duration-300 text-sm flex items-center gap-2"
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-xl shadow-blue-600/30 transition-all duration-300 text-sm flex items-center gap-2"
                             >
                                 <span>Book Consultation</span>
                                 <span>&rarr;</span>
                             </Link>
                             <Link
                                 href="/about"
-                                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 text-sm shadow-sm flex items-center"
+                                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-semibold px-6 py-3 rounded-xl transition-all duration-300 text-sm shadow-sm flex items-center"
                             >
                                 View Profile
                             </Link>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4 pt-4 border-t border-white/15 max-w-md">
+                        <div className="grid grid-cols-3 gap-4 pt-3 border-t border-white/15 max-w-md">
                             <div>
-                                <p className="text-2xl font-extrabold text-blue-300">10+</p>
+                                <p className="text-xl lg:text-2xl font-extrabold text-blue-300">10+</p>
                                 <p className="text-xs text-slate-300 font-medium">Years Experience</p>
                             </div>
                             <div>
-                                <p className="text-2xl font-extrabold text-blue-300">9,000+</p>
+                                <p className="text-xl lg:text-2xl font-extrabold text-blue-300">9,000+</p>
                                 <p className="text-xs text-slate-300 font-medium">Patients Treated</p>
                             </div>
                             <div>
-                                <p className="text-2xl font-extrabold text-blue-300">16K+</p>
+                                <p className="text-xl lg:text-2xl font-extrabold text-blue-300">16K+</p>
                                 <p className="text-xs text-slate-300 font-medium">BongDoc Followers</p>
                             </div>
                         </div>
@@ -709,7 +709,7 @@ export default function HeroSection() {
             <div className="lg:hidden relative flex flex-col w-full bg-slate-950">
 
                 {/* Full-Width Edge-to-Edge Image Slider Container */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900">
+                <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-900">
                     {slides.map((slide, index) => (
                         <div
                             key={index}
@@ -744,38 +744,38 @@ export default function HeroSection() {
                 </div>
 
                 {/* Content Section Below Full-Width Image */}
-                <div className="px-4 pt-4 pb-10 text-center flex flex-col items-center">
+                <div className="px-4 pt-3 pb-5 text-center flex flex-col items-center">
 
                     {/* Top Badge */}
-                    <div className="inline-flex items-center gap-1.5 bg-blue-600/90 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md border border-blue-400/30 mb-3">
+                    <div className="inline-flex items-center gap-1.5 bg-blue-600/90 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-md border border-blue-400/30 mb-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse flex-shrink-0"></span>
                         <span>{activeSlide.tag}</span>
                     </div>
 
                     {/* Headings */}
-                    <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-tight mb-4 px-2">
+                    <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-tight mb-3 px-2">
                         {activeSlide.titlePre} <span className="text-blue-400">{activeSlide.titleHighlight}</span>
                     </h1>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col w-full max-w-sm gap-2.5">
+                    <div className="flex flex-col w-full max-w-sm gap-2">
                         <Link
                             href="/contacts"
-                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg shadow-blue-600/30 transition text-xs flex items-center justify-center gap-2"
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl shadow-lg shadow-blue-600/30 transition text-xs flex items-center justify-center gap-2"
                         >
                             <span>Book Consultation</span>
                             <span>&rarr;</span>
                         </Link>
                         <Link
                             href="/about"
-                            className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md font-semibold py-3 rounded-xl transition text-xs text-center"
+                            className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md font-semibold py-2.5 rounded-xl transition text-xs text-center"
                         >
                             View Profile & Credentials
                         </Link>
                     </div>
 
                     {/* Trust Stats Bar */}
-                    <div className="grid grid-cols-3 gap-2 w-full max-w-sm pt-5 mt-5 border-t border-white/10">
+                    <div className="grid grid-cols-3 gap-2 w-full max-w-sm pt-3 mt-3 border-t border-white/10">
                         <div>
                             <p className="text-base font-extrabold text-blue-300">10+</p>
                             <p className="text-[9px] text-slate-300 font-medium">Years Exp.</p>
