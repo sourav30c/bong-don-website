@@ -68,6 +68,7 @@ function AnimatedCounter({ endValue, suffix }: { endValue: number; suffix: strin
     const [count, setCount] = useState(0);
     const [hasAnimated, setHasAnimated] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
+    const countRef = useRef(0);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -76,29 +77,37 @@ function AnimatedCounter({ endValue, suffix }: { endValue: number; suffix: strin
                     setHasAnimated(true);
 
                     let startTime: number | null = null;
-                    const duration = 2000; // 2 seconds animation duration
+                    const duration = 1600; // 1.6 seconds smooth duration
 
                     const animate = (timestamp: number) => {
                         if (!startTime) startTime = timestamp;
                         const progress = timestamp - startTime;
                         const percentage = Math.min(progress / duration, 1);
 
-                        // Ease-out expo formula for smooth deceleration towards the end
+                        // Smooth deceleration
                         const easeOut = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
+                        const nextCount = Math.floor(easeOut * endValue);
 
-                        setCount(Math.floor(easeOut * endValue));
+                        // Only trigger React state re-render if integer count actually changed
+                        if (nextCount !== countRef.current) {
+                            countRef.current = nextCount;
+                            setCount(nextCount);
+                        }
 
                         if (progress < duration) {
                             requestAnimationFrame(animate);
                         } else {
-                            setCount(endValue);
+                            if (countRef.current !== endValue) {
+                                countRef.current = endValue;
+                                setCount(endValue);
+                            }
                         }
                     };
 
                     requestAnimationFrame(animate);
                 }
             },
-            { threshold: 0.3 } // Triggers when 30% of the section is visible
+            { threshold: 0.15 } // Triggers smoothly when 15% of the section is visible
         );
 
         if (ref.current) {
@@ -144,7 +153,7 @@ export default function StatisticsSection() {
     ];
 
     return (
-        <section className="py-12 sm:py-16 bg-blue-900 text-white">
+        <section className="py-12 sm:py-16 bg-blue-900 text-white overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-2">
@@ -160,7 +169,7 @@ export default function StatisticsSection() {
                     {stats.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-white/10 backdrop-blur-md border border-white/20 p-5 sm:p-8 rounded-2xl sm:rounded-3xl text-center space-y-2 hover:bg-white/15 transition shadow-lg"
+                            className="bg-white/10 sm:backdrop-blur-md border border-white/20 p-5 sm:p-8 rounded-2xl sm:rounded-3xl text-center space-y-2 hover:bg-white/15 transition-colors duration-200 shadow-lg transform-gpu"
                         >
                             <AnimatedCounter endValue={item.value} suffix={item.suffix} />
                             <p className="text-base sm:text-lg font-bold text-white">
