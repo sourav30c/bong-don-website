@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutPage() {
     return (
-        <div className="bg-slate-50 min-h-screen pt-2 sm:pt-4 pb-8 sm:pb-12">
+        <div className="bg-slate-50 min-h-screen pt-12 sm:pt-16 lg:pt-10 pb-8 sm:pb-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8">
 
                 {/* Header Section */}
