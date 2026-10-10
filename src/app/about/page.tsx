@@ -645,6 +645,404 @@
 //   );
 // }
 
+
+
+
+// import Image from 'next/image';
+// import ScrollReveal from '@/components/ui/ScrollReveal';
+
+// export default function AboutPage() {
+//   return (
+//     <div className="bg-slate-50 min-h-screen">
+
+//       {/* Top Banner & Profile Header */}
+//       <section className="text-white pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 shadow-md border-b border-blue-900/40">
+
+//         {/* Subtle Background Pattern Overlay */}
+//         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+//         <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 relative z-10">
+//           <div className="space-y-1">
+//             <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-blue-400">
+//               About Us
+//             </span>
+//           </div>
+
+//           {/* Centered Circular Profile Photo */}
+//           <div className="pt-1 sm:pt-2">
+//             <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl relative bg-slate-900">
+//               <Image
+//                 src="/LandingProfImage.jpg"
+//                 alt="Dr. Sourav Sarkar"
+//                 fill
+//                 sizes="112px"
+//                 className="object-cover object-center"
+//                 priority
+//               />
+//             </div>
+//           </div>
+
+//           <div className="space-y-1 sm:space-y-1.5 max-w-2xl mx-auto">
+//             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+//               Dr. Sourav Sarkar
+//             </h2>
+//             <p className="text-blue-400 text-xs sm:text-sm font-semibold">
+//               MD, DM (Nephrology) • MRCP (London)
+//             </p>
+//             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 opacity-95 px-2 sm:px-0">
+//               Dr. Sourav Sarkar is a distinguished nephrologist with extensive experience in the diagnosis and treatment of kidney-related disorders. Dedicated to patient-centric care, he leads advanced renal programs focused on early detection and comprehensive management.
+//             </p>
+//           </div>
+
+//           {/* Bottom Pill Badge */}
+//           <div className="pt-2 flex justify-center">
+//             <span className="inline-flex items-center gap-1.5 sm:gap-2 bg-blue-900/60 backdrop-blur-md text-blue-200 text-[11px] sm:text-xs font-semibold px-4 sm:px-5 py-1.5 rounded-full border border-blue-700/40 shadow-sm max-w-[300px] sm:max-w-none text-center">
+//               <span>💡</span>
+//               <span>Renowned Nephrology & Transplant Specialist</span>
+//             </span>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Lower Credentials & Experience Grid with Animated Cards */}
+//       <section className="py-8 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 sm:-mt-6 relative z-20">
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+//           {/* Card 1: Education & Training */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-blue-600 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🎓</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Education & Training</h3>
+//               </div>
+
+//               <ul className="space-y-3.5 sm:space-y-4">
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-blue-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">DM in Nephrology</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">SSKM (PG) Hospital, Kolkata (Advanced Super-specialization)</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-blue-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">MD in Internal Medicine (Gold Medalist)</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Rigorous academic and clinical training in adult pathology and diagnostics</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-blue-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">MRCP (London)</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">International professional membership adhering to global medical standards</span>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//           {/* Card 2: Professional Experience */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-emerald-600 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🏥</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Professional Experience</h3>
+//               </div>
+
+//               <ul className="space-y-3.5 sm:space-y-4">
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-emerald-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Consultant Nephrologist & Internal Medicine Specialist</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Premier hospital attachments and private chambers across Kolkata, Barrackpur, and Barasat</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-emerald-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Renal Transplant & Critical Care Oversight</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Managing complex pre- and post-transplant regimens, acute kidney injury, and ICU protocols</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-emerald-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Digital Healthcare Educator</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Creator of BongDoc, bridging clinical science and patient literacy</span>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//           {/* Card 3: Awards & Recognition */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-amber-500 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🏆</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Awards & Recognition</h3>
+//               </div>
+
+//               <ul className="space-y-3.5 sm:space-y-4">
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-amber-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Gold Medalist in Post-Graduation</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Awarded for exceptional academic and clinical excellence during MD training</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-amber-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">SSKM (PG) Hospital Fellowship Recognition</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Recognized for advanced contributions to nephrology and critical patient care</span>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//           {/* Card 4: Areas of Expertise */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-indigo-600 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🩺</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Areas of Expertise</h3>
+//               </div>
+
+//               <ul className="space-y-2.5 sm:space-y-3">
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Kidney Transplant Evaluation & Post-Op Care</span>
+//                 </li>
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-sm text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Chronic Kidney Disease (CKD) & Renal Failure</span>
+//                 </li>
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-sm text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Hemodialysis & Peritoneal Dialysis Management</span>
+//                 </li>
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-sm text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Hypertension & Diabetic Kidney Disease Care</span>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//         </div>
+//       </section>
+
+//     </div>
+//   );
+// }
+
+
+
+
+
+// import Image from 'next/image';
+// import ScrollReveal from '@/components/ui/ScrollReveal';
+
+// export default function AboutPage() {
+//   return (
+//     <div className="bg-slate-50 min-h-screen">
+
+//       {/* Top Banner & Profile Header */}
+//       <section className="text-white pt-10 sm:pt-14 pb-14 sm:pb-18 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 shadow-md border-b border-blue-900/40">
+
+//         {/* Subtle Background Pattern Overlay */}
+//         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+//         <div className="max-w-3xl mx-auto space-y-4 sm:space-y-5 relative z-10">
+//           <div className="space-y-1">
+//             <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-blue-400">
+//               About Us
+//             </span>
+//           </div>
+
+//           {/* Centered Circular Profile Photo (Clean & Static) */}
+//           <div className="pt-2 sm:pt-3 flex justify-center">
+//             <div className="relative">
+//               {/* Subtle Glowing Ring Backdrop */}
+//               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-500 rounded-full blur-sm opacity-60"></div>
+
+//               {/* Profile Image Container */}
+//               <div className="relative w-32 h-32 sm:w-36 sm:h-36 mx-auto rounded-full overflow-hidden border-4 border-slate-900 shadow-2xl bg-slate-900">
+//                 <Image
+//                   src="/LandingProfImage.jpg"
+//                   alt="Dr. Sourav Sarkar"
+//                   fill
+//                   sizes="144px"
+//                   className="object-cover object-center"
+//                   priority
+//                 />
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="space-y-1.5 sm:space-y-2 max-w-2xl mx-auto">
+//             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+//               Dr. Sourav Sarkar
+//             </h2>
+//             <p className="text-blue-400 text-xs sm:text-sm font-semibold tracking-wide">
+//               MD, DM (Nephrology) • MRCP (London)
+//             </p>
+//             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 opacity-95 px-2 sm:px-0">
+//               Dr. Sourav Sarkar is a distinguished nephrologist with extensive experience in the diagnosis and treatment of kidney-related disorders. Dedicated to patient-centric care, he leads advanced renal programs focused on early detection and comprehensive management.
+//             </p>
+//           </div>
+
+//           {/* Bottom Pill Badge */}
+//           <div className="pt-3 flex justify-center">
+//             <span className="inline-flex items-center gap-1.5 sm:gap-2 bg-blue-900/60 backdrop-blur-md text-blue-200 text-[11px] sm:text-xs font-semibold px-4 sm:px-5 py-1.5 rounded-full border border-blue-700/40 shadow-sm max-w-[300px] sm:max-w-none text-center">
+//               <span>💡</span>
+//               <span>Renowned Nephrology & Transplant Specialist</span>
+//             </span>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Lower Credentials & Experience Grid with Animated Cards */}
+//       <section className="py-8 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 sm:-mt-6 relative z-20">
+//         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+//           {/* Card 1: Education & Training */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-blue-600 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🎓</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Education & Training</h3>
+//               </div>
+
+//               <ul className="space-y-3.5 sm:space-y-4">
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-blue-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">DM in Nephrology</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">SSKM (PG) Hospital, Kolkata (Advanced Super-specialization)</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-blue-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">MD in Internal Medicine (Gold Medalist)</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Rigorous academic and clinical training in adult pathology and diagnostics</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-blue-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">MRCP (London)</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">International professional membership adhering to global medical standards</span>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//           {/* Card 2: Professional Experience */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-emerald-600 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🏥</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Professional Experience</h3>
+//               </div>
+
+//               <ul className="space-y-3.5 sm:space-y-4">
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-emerald-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Consultant Nephrologist & Internal Medicine Specialist</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Premier hospital attachments and private chambers across Kolkata, Barrackpur, and Barasat</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-emerald-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Renal Transplant & Critical Care Oversight</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Managing complex pre- and post-transplant regimens, acute kidney injury, and ICU protocols</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-emerald-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Digital Healthcare Educator</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Creator of BongDoc, bridging clinical science and patient literacy</span>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//           {/* Card 3: Awards & Recognition */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-amber-500 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🏆</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Awards & Recognition</h3>
+//               </div>
+
+//               <ul className="space-y-3.5 sm:space-y-4">
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-amber-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">Gold Medalist in Post-Graduation</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Awarded for exceptional academic and clinical excellence during MD training</span>
+//                   </div>
+//                 </li>
+//                 <li className="flex items-start gap-2.5 sm:gap-3">
+//                   <span className="text-amber-600 font-bold text-xs sm:text-sm mt-0.5">✔</span>
+//                   <div>
+//                     <strong className="text-slate-900 block text-xs sm:text-sm">SSKM (PG) Hospital Fellowship Recognition</strong>
+//                     <span className="text-[11px] sm:text-xs text-slate-500 leading-relaxed block mt-0.5">Recognized for advanced contributions to nephrology and critical patient care</span>
+//                   </div>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//           {/* Card 4: Areas of Expertise */}
+//           <ScrollReveal>
+//             <div className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm space-y-5 sm:space-y-6 border-l-4 border-l-indigo-600 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+//               <div className="flex items-center gap-3 border-b border-slate-100 pb-3.5 sm:pb-4">
+//                 <span className="text-xl sm:text-2xl">🩺</span>
+//                 <h3 className="text-lg sm:text-xl font-bold text-slate-900">Areas of Expertise</h3>
+//               </div>
+
+//               <ul className="space-y-2.5 sm:space-y-3">
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Kidney Transplant Evaluation & Post-Op Care</span>
+//                 </li>
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-sm text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Chronic Kidney Disease (CKD) & Renal Failure</span>
+//                 </li>
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-sm text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Hemodialysis & Peritoneal Dialysis Management</span>
+//                 </li>
+//                 <li className="flex items-center gap-2.5 sm:gap-3 text-slate-700 text-sm text-xs sm:text-sm">
+//                   <span className="text-indigo-600 font-bold">✓</span>
+//                   <span>Hypertension & Diabetic Kidney Disease Care</span>
+//                 </li>
+//               </ul>
+//             </div>
+//           </ScrollReveal>
+
+//         </div>
+//       </section>
+
+//     </div>
+//   );
+// }
+
+
+
+
 import Image from 'next/image';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
@@ -652,48 +1050,51 @@ export default function AboutPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
 
-      {/* Top Banner & Profile Header */}
-      <section className="text-white pt-8 sm:pt-12 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 shadow-md border-b border-blue-900/40">
+      {/* Top Banner & Profile Header (Reduced height on mobile) */}
+      <section className="text-white py-6 sm:py-14 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 shadow-md border-b border-blue-900/40">
 
         {/* Subtle Background Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
-        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 relative z-10">
+        <div className="max-w-3xl mx-auto space-y-2.5 sm:space-y-5 relative z-10">
           <div className="space-y-1">
-            <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-blue-400">
+            <span className="text-[11px] sm:text-sm font-semibold uppercase tracking-widest text-blue-400">
               About Us
             </span>
           </div>
 
           {/* Centered Circular Profile Photo */}
-          <div className="pt-1 sm:pt-2">
-            <div className="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl relative bg-slate-900">
-              <Image
-                src="/LandingProfImage.jpg"
-                alt="Dr. Sourav Sarkar"
-                fill
-                sizes="112px"
-                className="object-cover object-center"
-                priority
-              />
+          <div className="flex justify-center">
+            <div className="relative">
+              {/* Profile Image Container with Soft Blue/Cyan Accent Border */}
+              <div className="relative w-24 h-24 sm:w-36 sm:h-36 mx-auto rounded-full overflow-hidden border-2 border-blue-400/50 shadow-2xl bg-slate-900">
+                <Image
+                  src="/LandingProfImage.jpg"
+                  alt="Dr. Sourav Sarkar"
+                  fill
+                  sizes="144px"
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
-          <div className="space-y-1 sm:space-y-1.5 max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+          <div className="space-y-1 sm:space-y-2 max-w-2xl mx-auto">
+            <h2 className="text-xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
               Dr. Sourav Sarkar
             </h2>
-            <p className="text-blue-400 text-xs sm:text-sm font-semibold">
+            <p className="text-blue-400 text-[11px] sm:text-sm font-semibold tracking-wide">
               MD, DM (Nephrology) • MRCP (London)
             </p>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1 opacity-95 px-2 sm:px-0">
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed pt-0.5 opacity-95 px-2 sm:px-0">
               Dr. Sourav Sarkar is a distinguished nephrologist with extensive experience in the diagnosis and treatment of kidney-related disorders. Dedicated to patient-centric care, he leads advanced renal programs focused on early detection and comprehensive management.
             </p>
           </div>
 
           {/* Bottom Pill Badge */}
-          <div className="pt-2 flex justify-center">
-            <span className="inline-flex items-center gap-1.5 sm:gap-2 bg-blue-900/60 backdrop-blur-md text-blue-200 text-[11px] sm:text-xs font-semibold px-4 sm:px-5 py-1.5 rounded-full border border-blue-700/40 shadow-sm max-w-[300px] sm:max-w-none text-center">
+          <div className="pt-1 flex justify-center">
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 bg-blue-900/60 backdrop-blur-md text-blue-200 text-[10px] sm:text-xs font-semibold px-3.5 sm:px-5 py-1.5 rounded-full border border-blue-700/40 shadow-sm max-w-[280px] sm:max-w-none text-center">
               <span>💡</span>
               <span>Renowned Nephrology & Transplant Specialist</span>
             </span>

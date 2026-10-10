@@ -2,8 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/i18n';
 
 export default function TestimonialsSection() {
+    const { t } = useLanguage();
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
@@ -41,59 +43,26 @@ export default function TestimonialsSection() {
         }
     };
 
-    const testimonials = [
-        {
-            quote: "Dr. Sourav Sarkar is exceptionally patient and thorough. He explained my father's chronic kidney disease stages in simple terms and guided us through the exact dietary and medication adjustments needed. Truly a blessing for our family.",
-            name: "A. Mukherjee",
-            location: "Patient Family Member, Kolkata"
-        },
-        {
-            quote: "Finding a nephrologist who listens without rushing you is rare. Dr. Sarkar managed my fluctuating blood pressure and renal parameters with immense care. His YouTube channel (BongDoc) also gave me so much confidence.",
-            name: "Rajesh Sengupta",
-            location: "Barasat Chamber Patient"
-        },
-        {
-            quote: "Consulted him at Galaxy Hospital in Barrackpur for recurrent urinary and renal issues. His diagnosis was spot on, and the treatment plan worked wonders. Highly professional and humble doctor.",
-            name: "Suman Roy",
-            location: "Barrackpur Patient"
-        },
-        {
-            quote: "His ability to break down complex medical terms in Bengali through BongDoc is amazing. When we visited him at Phoolbagan, he gave us complete time and addressed all our anxiety regarding dialysis care.",
-            name: "Debasish Chatterjee",
-            location: "Phoolbagan Patient"
-        },
-        {
-            quote: "One of the best internal medicine specialists in Kolkata. His calm demeanor and accurate diagnosis for persistent fever and weakness helped me recover very quickly.",
-            name: "Priyanka Banerjee",
-            location: "Kolkata"
-        },
-        {
-            quote: "Very structured approach to kidney stone prevention and lifestyle counseling. We travel from outstation for his weekend consultations because his treatment makes a genuine difference.",
-            name: "Amitava Ghosh",
-            location: "Burdwan Patient"
-        }
-    ];
-
     return (
         <section className="py-12 sm:py-16 bg-slate-50 border-t border-slate-200 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Section Header with Arrow Controls */}
+                {/* Section Header with Arrow Controls Shifted to Right */}
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-6">
                     <div className="space-y-3">
                         <span className="inline-block bg-blue-50 text-blue-700 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-blue-200">
-                            Patient Experiences
+                            {t.testimonials.badge}
                         </span>
                         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-                            What Our Patients Say
+                            {t.testimonials.title}
                         </h2>
                         <p className="text-slate-600 max-w-xl text-sm sm:text-base">
-                            Your trust is our greatest reward. Read what our valued patients have to say about their journey to better health with us.
+                            {t.testimonials.subtitle}
                         </p>
                     </div>
 
-                    {/* Dynamic Arrow Controls */}
-                    <div className="flex items-center gap-3">
+                    {/* Dynamic Arrow Controls (Shifted to Right on Mobile) */}
+                    <div className="flex items-center justify-end gap-3 w-full sm:w-auto">
                         {showLeftArrow && (
                             <button
                                 onClick={scrollLeft}
@@ -116,7 +85,7 @@ export default function TestimonialsSection() {
                             href="/testimonials"
                             className="text-xs font-semibold text-blue-600 hover:text-blue-800 uppercase tracking-wider ml-4 hidden sm:inline-block"
                         >
-                            View All &rarr;
+                            {t.testimonials.viewAll} &rarr;
                         </Link>
                     </div>
                 </div>
@@ -126,7 +95,7 @@ export default function TestimonialsSection() {
                     ref={scrollContainerRef}
                     className="flex overflow-x-auto space-x-4 sm:space-x-6 pb-6 pt-2 snap-x snap-mandatory scrollbar-none [-ms-overflow-style:none] [scrollbar-width:none] scroll-smooth"
                 >
-                    {testimonials.map((item, index) => (
+                    {t.testimonials.items.map((item, index) => (
                         <div
                             key={index}
                             className="flex-shrink-0 w-[280px] min-[400px]:w-80 sm:w-96 bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6 snap-start hover:shadow-md transition"

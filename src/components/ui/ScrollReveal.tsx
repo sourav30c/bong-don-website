@@ -2,7 +2,19 @@
 
 import { useEffect, useRef, useState, ReactNode } from 'react';
 
-export default function ScrollReveal({ children, className = "" }: { children: ReactNode; className?: string }) {
+interface ScrollRevealProps {
+    children: ReactNode;
+    className?: string;
+    threshold?: number;
+    rootMargin?: string;
+}
+
+export default function ScrollReveal({
+    children,
+    className = "",
+    threshold = 0,
+    rootMargin = "60px 0px"
+}: ScrollRevealProps) {
     const ref = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -14,7 +26,10 @@ export default function ScrollReveal({ children, className = "" }: { children: R
                     observer.disconnect();
                 }
             },
-            { threshold: 0.1 } // Triggers when 10% of the section enters the screen
+            {
+                threshold,
+                rootMargin
+            }
         );
 
         if (ref.current) {
@@ -22,12 +37,12 @@ export default function ScrollReveal({ children, className = "" }: { children: R
         }
 
         return () => observer.disconnect();
-    }, []);
+    }, [threshold, rootMargin]);
 
     return (
         <div
             ref={ref}
-            className={`transition-all duration-700 ease-out will-change-transform transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`transition-all duration-700 ease-out will-change-transform transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 } ${className}`}
         >
             {children}
