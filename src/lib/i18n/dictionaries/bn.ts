@@ -15,6 +15,8 @@ export const bn: Dictionary = {
     clinics: 'চেম্বার ও সময়সূচী',
     media: 'ভিডিও ও স্বাস্থ্যকথা',
     testimonials: 'রোগীদের অভিজ্ঞতা',
+    faqs: 'সাধারণ জিজ্ঞাসা',
+    calculators: 'ক্যালকুলেটর',
     contacts: 'যোগাযোগ',
     bookAppointment: 'অ্যাপয়েন্টমেন্ট বুক করুন'
   },

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/lib/i18n';
+import { SITE_CONTACT } from '@/config/contact';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -12,7 +13,8 @@ export default function Footer() {
     { name: t.nav.services, href: '/services' },
     { name: t.nav.clinics, href: '/clinics' },
     { name: t.nav.media, href: '/media' },
-    { name: t.nav.testimonials, href: '/testimonials' },
+    { name: t.nav.faqs, href: '/faqs' },
+    { name: t.nav.calculators, href: '/calculators' },
     { name: t.nav.contacts, href: '/contacts' },
   ];
 
@@ -152,8 +154,8 @@ export default function Footer() {
               </div>
 
               <div className="pt-2 border-t border-slate-800/80 space-y-1">
-                <p><strong className="text-white">{t.footer.phoneLabel}</strong> +91 824 094 8974</p>
-                <p><strong className="text-white">{t.footer.emailLabel}</strong> <span className="break-all sm:break-normal">contact@drsouravsarkar.com</span></p>
+                <p><strong className="text-white">{t.footer.phoneLabel}</strong> <a href={SITE_CONTACT.phone.telUrl} className="hover:text-white transition-colors">{SITE_CONTACT.phone.display}</a></p>
+                <p><strong className="text-white">{t.footer.emailLabel}</strong> <a href={SITE_CONTACT.email.mailtoUrl} className="hover:text-white transition-colors break-all sm:break-normal">{SITE_CONTACT.email.address}</a></p>
               </div>
 
               <div className="pt-1">

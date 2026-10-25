@@ -15,6 +15,8 @@ export const hi: Dictionary = {
     clinics: 'क्लीनिक व समय',
     media: 'वीडियो एवं स्वास्थ्य चर्चा',
     testimonials: 'रोगी अनुभव',
+    faqs: 'सामान्य प्रश्न (FAQs)',
+    calculators: 'कैलकुलेटर',
     contacts: 'संपर्क',
     bookAppointment: 'अपॉइंटमेंट बुक करें'
   },

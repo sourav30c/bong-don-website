@@ -15,6 +15,8 @@ export const en: Dictionary = {
     clinics: 'Clinics',
     media: 'Media & Vlogs',
     testimonials: 'Testimonials',
+    faqs: 'FAQs',
+    calculators: 'Calculators',
     contacts: 'Contacts',
     bookAppointment: 'Book Appointment'
   },

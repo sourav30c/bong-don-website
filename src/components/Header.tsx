@@ -19,7 +19,8 @@ export default function Header() {
     { name: t.nav.services, href: '/services' },
     { name: t.nav.clinics, href: '/clinics' },
     { name: t.nav.media, href: '/media' },
-    { name: t.nav.testimonials, href: '/testimonials' },
+    { name: t.nav.faqs, href: '/faqs' },
+    { name: t.nav.calculators, href: '/calculators' },
     { name: t.nav.contacts, href: '/contacts' },
   ];
 
@@ -41,6 +42,14 @@ export default function Header() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleHomeClick = () => {
+    setIsMobileMenuOpen(false);
+    setIsLangOpen(false);
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
@@ -68,10 +77,7 @@ export default function Header() {
         <Link
           href="/"
           className="flex items-center gap-2 sm:gap-3 group text-left min-w-0 flex-shrink"
-          onClick={() => {
-            setIsMobileMenuOpen(false);
-            setIsLangOpen(false);
-          }}
+          onClick={handleHomeClick}
         >
           {/* Circular & Fast-Glowing Logo Container */}
           <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 bg-blue-50 shadow-md group-hover:border-red-500 transition flex-shrink-0 flex items-center justify-center animate-elegant-glow-fast">
@@ -94,13 +100,14 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-5 text-sm font-medium">
+        <nav className="hidden lg:flex items-center space-x-3.5 xl:space-x-4.5 text-[13px] xl:text-sm font-medium">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={link.href === '/' ? handleHomeClick : undefined}
                 className={`transition-colors duration-200 py-1 border-b-2 whitespace-nowrap ${isActive
                   ? 'text-blue-600 border-blue-600 font-semibold'
                   : 'text-slate-600 border-transparent hover:text-blue-600 hover:border-slate-300'
@@ -159,8 +166,8 @@ export default function Header() {
                         setIsLangOpen(false);
                       }}
                       className={`w-full flex items-center justify-between px-3 py-2 text-xs text-left transition ${isSelected
-                          ? 'bg-blue-50 text-blue-600 font-bold'
-                          : 'text-slate-700 hover:bg-slate-50'
+                        ? 'bg-blue-50 text-blue-600 font-bold'
+                        : 'text-slate-700 hover:bg-slate-50'
                         }`}
                     >
                       <span>{lang.label}</span>
@@ -213,7 +220,13 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    if (link.href === '/') {
+                      handleHomeClick();
+                    } else {
+                      setIsMobileMenuOpen(false);
+                    }
+                  }}
                   className={`px-4 py-3 rounded-xl text-sm font-medium transition ${isActive
                     ? 'bg-blue-50 text-blue-600 font-semibold'
                     : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600'

@@ -34,7 +34,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     try {
       const savedLocale = localStorage.getItem(STORAGE_KEY) as Locale;
       if (savedLocale && (savedLocale === 'en' || savedLocale === 'bn' || savedLocale === 'hi')) {
-        setLocaleState(savedLocale);
+        queueMicrotask(() => {
+          setLocaleState(savedLocale);
+        });
       }
     } catch {
       // Ignore localStorage errors in restricted environments

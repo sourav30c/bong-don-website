@@ -222,6 +222,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SITE_CONTACT } from '@/config/contact';
 
 const slides = [
     {
@@ -247,7 +248,7 @@ const slides = [
     }
 ];
 
-const whatsappUrl = 'https://wa.me/919831030908?text=Hello%20Dr.%20Sourav%20Sarkar,%20I%20would%20like%20to%20book%20a%20consultation.';
+const whatsappUrl = SITE_CONTACT.whatsapp.getUrl();
 
 export default function HeroSection() {
     const [currentSlide, setCurrentSlide] = useState(0);

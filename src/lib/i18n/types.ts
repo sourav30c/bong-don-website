@@ -17,6 +17,8 @@ export interface Dictionary {
     testimonials: string;
     contacts: string;
     bookAppointment: string;
+    faqs: string;
+    calculators: string;
   };
   hero: {
     badge: string;

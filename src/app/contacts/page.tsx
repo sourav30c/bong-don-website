@@ -2,13 +2,66 @@
 
 import { useState } from 'react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { SITE_CONTACT } from '@/config/contact';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    gender: 'Select Gender',
+    preferredDate: '',
+    consultationType: 'General Consultation',
+    location: '',
+    concern: ''
+  });
   const [submitted, setSubmitted] = useState(false);
+  const [lastWhatsAppUrl, setLastWhatsAppUrl] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const fullName = `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim();
+    const message = `🏥 *NEW APPOINTMENT / CONSULTATION ENQUIRY*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Patient Name:* ${fullName || 'Not specified'}
+📞 *Phone Number:* ${formData.phone.trim()}
+${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}${formData.gender && formData.gender !== 'Select Gender' ? `🚻 *Gender:* ${formData.gender}\n` : ''}📅 *Preferred Date:* ${formData.preferredDate || 'Earliest available'}
+🩺 *Consultation Type:* ${formData.consultationType}
+${formData.location.trim() ? `📍 *Location:* ${formData.location.trim()}\n` : ''}📝 *Concern / Symptoms:*
+${formData.concern.trim() || 'General consultation request'}
+━━━━━━━━━━━━━━━━━━━━
+_Sent via Dr. Sourav Sarkar's Website_`;
+
+    const targetUrl = SITE_CONTACT.whatsapp.getUrl(message);
+    setLastWhatsAppUrl(targetUrl);
     setSubmitted(true);
+
+    if (typeof window !== 'undefined') {
+      window.open(targetUrl, '_blank');
+    }
+  };
+
+  const handleReset = () => {
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      gender: 'Select Gender',
+      preferredDate: '',
+      consultationType: 'General Consultation',
+      location: '',
+      concern: ''
+    });
+    setSubmitted(false);
+    setLastWhatsAppUrl('');
   };
 
   return (
@@ -49,7 +102,7 @@ export default function ContactPage() {
                 <div className="space-y-3 sm:space-y-4 text-sm text-slate-600">
                   {/* Phone */}
                   <a 
-                    href="tel:+918240948974" 
+                    href={SITE_CONTACT.phone.telUrl} 
                     className="group flex items-start gap-3 sm:gap-4 p-3 sm:p-3.5 -mx-2 sm:-mx-3.5 rounded-xl sm:rounded-2xl hover:bg-slate-50 transition-all duration-200"
                   >
                     <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-200 shadow-sm">
@@ -57,14 +110,14 @@ export default function ContactPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <strong className="text-slate-900 block group-hover:text-blue-600 transition-colors">Call Us</strong>
-                      <span className="text-slate-700 font-medium block text-sm sm:text-base">+91 824 094 8974</span>
-                      <span className="block text-xs text-slate-400 mt-0.5">Mon – Sat, 10:00 AM – 7:00 PM</span>
+                      <span className="text-slate-700 font-medium block text-sm sm:text-base">{SITE_CONTACT.phone.display}</span>
+                      <span className="block text-xs text-slate-400 mt-0.5">{SITE_CONTACT.hours.display}</span>
                     </div>
                   </a>
 
                   {/* WhatsApp */}
                   <a 
-                    href="https://wa.me/918240948974" 
+                    href={SITE_CONTACT.whatsapp.getUrl()} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="group flex items-start gap-3 sm:gap-4 p-3 sm:p-3.5 -mx-2 sm:-mx-3.5 rounded-xl sm:rounded-2xl hover:bg-slate-50 transition-all duration-200"
@@ -83,7 +136,7 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <a 
-                    href="mailto:contact@drsouravsarkar.com" 
+                    href={SITE_CONTACT.email.mailtoUrl} 
                     className="group flex items-start gap-3 sm:gap-4 p-3 sm:p-3.5 -mx-2 sm:-mx-3.5 rounded-xl sm:rounded-2xl hover:bg-slate-50 transition-all duration-200"
                   >
                     <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-200 shadow-sm">
@@ -91,7 +144,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <strong className="text-slate-900 block group-hover:text-purple-600 transition-colors">Email Support</strong>
-                      <span className="text-slate-700 font-medium block text-xs sm:text-sm break-all sm:break-normal">contact@drsouravsarkar.com</span>
+                      <span className="text-slate-700 font-medium block text-xs sm:text-sm break-all sm:break-normal">{SITE_CONTACT.email.address}</span>
                       <span className="block text-xs text-slate-400 mt-0.5">Send reports & clinical queries</span>
                     </div>
                   </a>
@@ -145,19 +198,31 @@ export default function ContactPage() {
 
                 {submitted ? (
                   <div className="bg-emerald-50 border border-emerald-200 text-emerald-900 p-6 sm:p-8 rounded-xl sm:rounded-2xl text-center space-y-4 transition-all duration-300">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-xl sm:text-2xl">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-xl sm:text-2xl font-bold">
                       ✓
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold">Appointment Request Received!</h4>
+                    <h4 className="text-lg sm:text-xl font-bold">Appointment Request Sent to WhatsApp!</h4>
                     <p className="text-xs sm:text-sm text-emerald-800 max-w-md mx-auto leading-relaxed">
-                      Thank you. Our receptionist desk will review your submission and call you shortly to confirm your preferred chamber slot.
+                      Your appointment details have been prepared and WhatsApp opened to send directly to Dr. Sourav Sarkar&apos;s desk ({SITE_CONTACT.phone.display}).
                     </p>
-                    <button 
-                      onClick={() => setSubmitted(false)}
-                      className="mt-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-emerald-700 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow transition-all duration-200 cursor-pointer"
-                    >
-                      Submit Another Enquiry
-                    </button>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                      {lastWhatsAppUrl && (
+                        <a 
+                          href={lastWhatsAppUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-5 py-2.5 bg-emerald-600 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-emerald-700 hover:-translate-y-0.5 active:translate-y-0 shadow-sm hover:shadow transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+                        >
+                          <span>💬 Open WhatsApp Chat</span>
+                        </a>
+                      )}
+                      <button 
+                        onClick={handleReset}
+                        className="px-5 py-2.5 bg-white border border-emerald-300 text-emerald-800 rounded-xl text-xs sm:text-sm font-semibold hover:bg-emerald-100/60 transition-all duration-200 cursor-pointer"
+                      >
+                        Submit Another Enquiry
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
@@ -166,6 +231,9 @@ export default function ContactPage() {
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">First Name *</label>
                         <input 
                           type="text" 
+                          name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
                           required 
                           placeholder="First Name" 
                           className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300"
@@ -175,6 +243,9 @@ export default function ContactPage() {
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Last Name *</label>
                         <input 
                           type="text" 
+                          name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
                           required 
                           placeholder="Last Name" 
                           className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300"
@@ -187,6 +258,9 @@ export default function ContactPage() {
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Email</label>
                         <input 
                           type="email" 
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           placeholder="Email Address" 
                           className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300"
                         />
@@ -195,6 +269,9 @@ export default function ContactPage() {
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Phone Number *</label>
                         <input 
                           type="tel" 
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
                           required 
                           placeholder="10-digit Phone Number" 
                           className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300"
@@ -205,7 +282,12 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                       <div>
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Select Gender</label>
-                        <select className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300 cursor-pointer">
+                        <select 
+                          name="gender"
+                          value={formData.gender}
+                          onChange={handleChange}
+                          className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300 cursor-pointer"
+                        >
                           <option>Select Gender</option>
                           <option>Male</option>
                           <option>Female</option>
@@ -216,6 +298,9 @@ export default function ContactPage() {
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Preferred Date *</label>
                         <input 
                           type="date" 
+                          name="preferredDate"
+                          value={formData.preferredDate}
+                          onChange={handleChange}
                           required 
                           className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300 cursor-pointer"
                         />
@@ -225,7 +310,12 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                       <div>
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Select Consultation Type</label>
-                        <select className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300 cursor-pointer">
+                        <select 
+                          name="consultationType"
+                          value={formData.consultationType}
+                          onChange={handleChange}
+                          className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300 cursor-pointer"
+                        >
                           <option>General Consultation</option>
                           <option>Chronic Kidney Disease (CKD)</option>
                           <option>Dialysis Management</option>
@@ -238,6 +328,9 @@ export default function ContactPage() {
                         <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Your Location</label>
                         <input 
                           type="text" 
+                          name="location"
+                          value={formData.location}
+                          onChange={handleChange}
                           placeholder="City / Area" 
                           className="w-full min-h-[44px] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300"
                         />
@@ -248,6 +341,9 @@ export default function ContactPage() {
                       <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">Tell us about your concern... *</label>
                       <textarea 
                         rows={3} 
+                        name="concern"
+                        value={formData.concern}
+                        onChange={handleChange}
                         required 
                         placeholder="Mention brief medical history or symptoms..." 
                         className="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all duration-200 text-sm bg-white text-slate-800 hover:border-slate-300 resize-none min-h-[90px]"
@@ -257,11 +353,14 @@ export default function ContactPage() {
                     <div>
                       <button 
                         type="submit" 
-                        className="w-full min-h-[48px] bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 sm:py-3.5 px-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 text-sm sm:text-base cursor-pointer flex items-center justify-center gap-2 group"
+                        className="w-full min-h-[48px] bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-3 sm:py-3.5 px-4 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 text-sm sm:text-base cursor-pointer flex items-center justify-center gap-2 group"
                       >
-                        <span>Book Appointment / Submit Enquiry</span>
+                        <span>💬 Book Appointment via WhatsApp</span>
                         <span className="group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
                       </button>
+                      <p className="text-[11px] text-center text-slate-400 mt-2">
+                        Direct connection to Dr. Sourav Sarkar&apos;s appointment desk ({SITE_CONTACT.phone.display})
+                      </p>
                     </div>
                   </form>
                 )}

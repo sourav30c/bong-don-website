@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import FloatingActions from "@/components/common/FloatingActions";
+import HomeRedirectOnLanding from "@/components/common/HomeRedirectOnLanding";
 import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
@@ -32,7 +33,21 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (window.location.pathname !== '/') {
+                  window.location.replace('/');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 font-sans relative">
+        <HomeRedirectOnLanding />
         <LanguageProvider>
           <Header />
           <main className="flex-1">{children}</main>

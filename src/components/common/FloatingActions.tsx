@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { useLanguage } from '@/lib/i18n';
+import { SITE_CONTACT } from '@/config/contact';
 
 export default function FloatingActions() {
   const { t } = useLanguage();
-  const phoneNumber = 'tel:+919831030908';
-  const whatsappUrl = 'https://wa.me/919831030908?text=Hello%20Dr.%20Sourav%20Sarkar,%20I%20would%20like%20to%20book%20a%20consultation.';
+  const phoneNumber = SITE_CONTACT.phone.telUrl;
+  const whatsappUrl = SITE_CONTACT.whatsapp.getUrl();
 
   return (
     <>
